@@ -1,0 +1,54 @@
+﻿<Page x:Class="gestionCRSBP.Home"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:gestionCRSBP"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Home">
+
+    <Grid>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="_Fichier">
+                <MenuItem Header="_Sauvegarder" HorizontalAlignment="Left"/>
+                <MenuItem Header="_Quitter" HorizontalAlignment="Left" Click="MenuItem_Click"/>
+            </MenuItem>
+            <MenuItem Header="_?" Click="MenuItem_Click_1"></MenuItem>
+        </Menu>
+        <TabControl Margin="0,24,0,0">
+            <TabItem>
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal" Height="30">
+                        <TextBlock>Gestion Membre</TextBlock>
+                        <Image Source="/Images/membre.png" RenderTransformOrigin="0.714,1.975" Width="40"/>
+                    </StackPanel >
+                </TabItem.Header>
+            </TabItem>
+            <TabItem>
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal" Height="30">
+                        <TextBlock>Gestion Employe</TextBlock>
+                        <Image Source="/Images/employe.png" RenderTransformOrigin="0.714,1.975" Width="40"/>
+                    </StackPanel >
+                </TabItem.Header>
+            </TabItem>
+            <TabItem>
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal" Height="30">
+                        <TextBlock>Gestion Livre</TextBlock>
+                        <Image Source="/Images/livre.png" RenderTransformOrigin="0.714,1.975" Width="40"/>
+                    </StackPanel >
+                </TabItem.Header>
+            </TabItem>
+            <TabItem>
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal" Height="30">
+                        <TextBlock>Gestion Location</TextBlock>
+                        <Image Source="/Images/rent.png" RenderTransformOrigin="0.714,1.975" Width="41"/>
+                    </StackPanel >
+                </TabItem.Header>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Page>
