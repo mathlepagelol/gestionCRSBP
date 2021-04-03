@@ -52,8 +52,9 @@ namespace gestionCRSBP.Models
         public List<Employe> listeEmploye;
         public List<Membre> listeMembre;
         public List<Livre> listeLivre;
+        public List<Location> listeLocation;
 
-        
+
         public Biblio(string unNom, string uneAdresse, string unTelephone, string unCodePostal)
         {
             this.Nom = unNom;
@@ -63,6 +64,7 @@ namespace gestionCRSBP.Models
             this.listeEmploye = new List<Employe>();
             this.listeMembre = new List<Membre>();
             this.listeLivre = new List<Livre>();
+            this.listeLocation = new List<Location>();
         }
 
         public Membre ObtenirMembre(Membre unMembre)
@@ -110,6 +112,21 @@ namespace gestionCRSBP.Models
             return listeLivre.ToArray();
         }
 
+        public Location[] ObtenirListeLocation()
+        {
+            return listeLocation.ToArray();
+        }
+
+        public Location ObtenirLocation(Location uneLocation)
+        {
+            foreach (Location location in listeLocation)
+            {
+                if (location.Equals(uneLocation))
+                    return location;
+            }
+            return null;
+        }
+
         public bool EnleverEmploye(Employe unEmploye)
         {
             if (!SiEmployePresent(unEmploye))
@@ -132,6 +149,14 @@ namespace gestionCRSBP.Models
                 return false;
             listeLivre.Remove(unLivre);
             return !SiLivrePresent(unLivre);
+        }
+
+        public bool EnleverLocation(Location uneLocation)
+        {
+            if (!SiLocationPresent(uneLocation))
+                return false;
+            listeLocation.Remove(uneLocation);
+            return !SiLocationPresent(uneLocation);
         }
 
         public bool SiEmployePresent(Employe unEmploye)
@@ -159,6 +184,16 @@ namespace gestionCRSBP.Models
             foreach (Livre livre in listeLivre)
             {
                 if (livre.Equals(unLivre))
+                    return true;
+            }
+            return false;
+        }
+
+        public bool SiLocationPresent(Location uneLocation)
+        {
+            foreach (Location location in listeLocation)
+            {
+                if (location.Equals(uneLocation))
                     return true;
             }
             return false;

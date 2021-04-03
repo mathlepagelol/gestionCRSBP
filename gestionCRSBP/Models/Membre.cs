@@ -48,7 +48,12 @@ namespace gestionCRSBP.Models
             set { codePostal = value; }
         }
 
-        public List<Location> listeLocation = new List<Location>();
+        public Location uneLocation;
+
+        public Location obtenirLocation()
+        {
+            return this.uneLocation;
+        }
 
         public override int GetHashCode()
         {
