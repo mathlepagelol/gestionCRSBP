@@ -4,6 +4,30 @@
              xmlns:local="clr-namespace:gestionCRSBP"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <Style TargetType="ListViewItem">
+            <Setter Property="HorizontalContentAlignment" Value="Center" />
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="BorderBrush" Value="#FF1D8AD4" />
+            <Style.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="4" />
+                    <Setter Property="BorderThickness" Value="4" />
+                </Style>
+            </Style.Resources>
+        </Style>
+        <Style x:Key="dpStyle" TargetType="{x:Type DatePicker}">
+            <Setter Property="BorderBrush" Value="#FF1D8AD4" />
+            <Style.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="4" />
+                    <Setter Property="BorderThickness" Value="4" />
+                </Style>
+            </Style.Resources>
+        </Style>
+        <Style x:Key="lvStyle" TargetType="{x:Type ListView}">
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="BorderBrush" Value="#FF1D8AD4" />
+        </Style>
     </Application.Resources>
 </Application>

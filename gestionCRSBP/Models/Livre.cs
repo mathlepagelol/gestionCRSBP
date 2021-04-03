@@ -20,15 +20,15 @@ namespace gestionCRSBP.Models
             get { return (titre); }
             set { titre = value; }
         }
-        private string qte;
-        public string Qte
+        private int qte;
+        public int Qte
         {
             get { return (qte); }
             set { qte = value; }
         }
 
-        private string datePublication;
-        public string DatePublication
+        private DateTime datePublication;
+        public DateTime DatePublication
         {
             get { return (datePublication); }
             set { datePublication = value; }

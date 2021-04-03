@@ -17,3 +17,4 @@ C:\Users\Mathieu Lepage\Desktop\Mathieu\Études\Session VI\Veille technologique\
 C:\Users\Mathieu Lepage\Desktop\Mathieu\Études\Session VI\Veille technologique\Sommatif_WPF\gestionCRSBP\gestionCRSBP\obj\Debug\gestionCRSBP.csproj.CoreCompileInputs.cache
 C:\Users\Mathieu Lepage\Desktop\Mathieu\Études\Session VI\Veille technologique\Sommatif_WPF\gestionCRSBP\gestionCRSBP\obj\Debug\gestionCRSBP.exe
 C:\Users\Mathieu Lepage\Desktop\Mathieu\Études\Session VI\Veille technologique\Sommatif_WPF\gestionCRSBP\gestionCRSBP\obj\Debug\gestionCRSBP.pdb
+C:\Users\Mathieu Lepage\Desktop\Mathieu\Études\Session VI\Veille technologique\Sommatif_WPF\gestionCRSBP\gestionCRSBP\obj\Debug\App.baml

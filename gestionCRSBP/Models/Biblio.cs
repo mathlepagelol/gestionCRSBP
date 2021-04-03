@@ -95,6 +95,75 @@ namespace gestionCRSBP.Models
             return listeEmploye.ToArray();
         }
 
+        public Livre ObtenirLivre(Livre unLivre)
+        {
+            foreach (Livre livre in listeLivre)
+            {
+                if (livre.Equals(unLivre))
+                    return livre;
+            }
+            return null;
+        }
+
+        public Livre[] ObtenirListeLivre()
+        {
+            return listeLivre.ToArray();
+        }
+
+        public bool EnleverEmploye(Employe unEmploye)
+        {
+            if (!SiEmployePresent(unEmploye))
+                return false;
+            listeEmploye.Remove(unEmploye);
+            return !SiEmployePresent(unEmploye);
+        }
+
+        public bool EnleverMembre(Membre unMembre)
+        {
+            if (!SiMembrePresent(unMembre))
+                return false;
+            listeMembre.Remove(unMembre);
+            return !SiMembrePresent(unMembre);
+        }
+
+        public bool EnleverLivre(Livre unLivre)
+        {
+            if (!SiLivrePresent(unLivre))
+                return false;
+            listeLivre.Remove(unLivre);
+            return !SiLivrePresent(unLivre);
+        }
+
+        public bool SiEmployePresent(Employe unEmploye)
+        {
+            foreach (Employe employe in listeEmploye)
+            {
+                if (employe.Equals(unEmploye))
+                    return true;
+            }
+            return false;
+        }
+
+        public bool SiMembrePresent(Membre unMembre)
+        {
+            foreach (Membre membre in listeMembre)
+            {
+                if (membre.Equals(unMembre))
+                    return true;
+            }
+            return false;
+        }
+
+        public bool SiLivrePresent(Livre unLivre)
+        {
+            foreach (Livre livre in listeLivre)
+            {
+                if (livre.Equals(unLivre))
+                    return true;
+            }
+            return false;
+        }
+
         public override int GetHashCode()
         {
             return Telephone.GetHashCode();

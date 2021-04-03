@@ -32,6 +32,7 @@ namespace gestionCRSBP
         {
             edtNoMembre.Text = edtNomMembre.Text = edtPrenomMembre.Text = edtAdresseMembre.Text = edtCodePostalMembre.Text = edtTelephoneMembre.Text = "";
             edtNoEmploye.Text = edtNomEmploye.Text = edtPrenomEmploye.Text = edtAdresseEmploye.Text = edtCodePostalEmploye.Text = edtTelephoneEmploye.Text = "";
+            edtNoLivre.Text = edtTitreLivre.Text = edtQuantiteLivre.Text = dpDateLivre.Text = edtAuteurLivre.Text = "";
         }
 
         private void MenuQuitter_Click(object sender, RoutedEventArgs e)
@@ -56,7 +57,6 @@ namespace gestionCRSBP
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.Message);
             }
         }
@@ -80,14 +80,28 @@ namespace gestionCRSBP
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.Message);
             }
         }
 
         private void btnSupprimerMembre_Click(object sender, RoutedEventArgs e)
         {
+            try
+            {
+                Membre monMembre;
+                monMembre = crsbp.ObtenirMembre(new Membre() { NoMembre = crsbp.ObtenirListeMembre()[lvMembre.SelectedIndex].NoMembre });
 
+                crsbp.EnleverMembre(monMembre);
+                lvMembre.ItemsSource = null;
+                lvMembre.ItemsSource = crsbp.listeMembre;
+                MessageBox.Show("Suppression réussie");
+                viderChamps();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void ShowSelected_Membre(object sender, MouseButtonEventArgs e)
@@ -105,7 +119,6 @@ namespace gestionCRSBP
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.Message);
             }
         }
@@ -122,7 +135,6 @@ namespace gestionCRSBP
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.Message);
             }
         }
@@ -146,14 +158,28 @@ namespace gestionCRSBP
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.Message);
             }
         }
 
         private void btnSupprimerEmploye_Click(object sender, RoutedEventArgs e)
         {
+            try
+            {
+                Employe monEmploye;
+                monEmploye = crsbp.ObtenirEmploye(new Employe() { NoEmploye = crsbp.ObtenirListeEmploye()[lvEmploye.SelectedIndex].NoEmploye });
 
+                crsbp.EnleverEmploye(monEmploye);
+                lvEmploye.ItemsSource = null;
+                lvEmploye.ItemsSource = crsbp.listeEmploye;
+                MessageBox.Show("Suppression réussie");
+                viderChamps();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
         }
 
         private void ShowSelected_Employe(object sender, MouseButtonEventArgs e)
@@ -172,6 +198,83 @@ namespace gestionCRSBP
             catch (Exception ex)
             {
 
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        /* -------------- Fonctions de gestion des livres ------------------------- */
+
+        private void btnAjouterLivre_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                crsbp.listeLivre.Add(new Livre() { NoSerie = edtNoLivre.Text, Titre = edtTitreLivre.Text, Qte = int.Parse(edtQuantiteLivre.Text), DatePublication = DateTime.Parse(dpDateLivre.Text), Auteur = edtAuteurLivre.Text });
+                lvLivre.ItemsSource = null;
+                lvLivre.ItemsSource = crsbp.listeLivre;
+                viderChamps();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnModifierLivre_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                Livre monLivre;
+                monLivre = crsbp.ObtenirLivre(new Livre() { NoSerie = crsbp.ObtenirListeLivre()[lvLivre.SelectedIndex].NoSerie });
+
+                monLivre.Titre = edtTitreLivre.Text;
+                monLivre.Qte = int.Parse(edtQuantiteLivre.Text);
+                monLivre.DatePublication = DateTime.Parse(dpDateLivre.Text);
+                monLivre.Auteur = edtAuteurLivre.Text;
+                lvLivre.ItemsSource = null;
+                lvLivre.ItemsSource = crsbp.listeLivre;
+                MessageBox.Show("Modification réussie");
+                viderChamps();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnSupprimerLivre_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                Livre monLivre;
+                monLivre = crsbp.ObtenirLivre(new Livre() { NoSerie = crsbp.ObtenirListeLivre()[lvLivre.SelectedIndex].NoSerie });
+
+                crsbp.EnleverLivre(monLivre);
+                lvLivre.ItemsSource = null;
+                lvLivre.ItemsSource = crsbp.listeLivre;
+                MessageBox.Show("Suppression réussie");
+                viderChamps();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ShowSelected_Livre(object sender, MouseButtonEventArgs e)
+        {
+            try
+            {
+                Livre monLivre;
+                monLivre = crsbp.ObtenirLivre(new Livre() { NoSerie = crsbp.ObtenirListeLivre()[lvLivre.SelectedIndex].NoSerie });
+                edtNoLivre.Text = monLivre.NoSerie;
+                edtTitreLivre.Text = monLivre.Titre;
+                edtQuantiteLivre.Text = monLivre.Qte.ToString();
+                dpDateLivre.Text = monLivre.DatePublication.ToString();
+                edtAuteurLivre.Text = monLivre.Auteur;
+            }
+            catch (Exception ex)
+            {
                 MessageBox.Show(ex.Message);
             }
         }
