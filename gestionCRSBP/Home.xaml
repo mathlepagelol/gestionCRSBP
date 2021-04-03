@@ -7,7 +7,7 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Home">
-    
+
     <Grid>
         <Menu>
             <MenuItem Header="_Fichier">
@@ -20,20 +20,20 @@
             <TabItem>
                 <TabItem.Header>
                     <StackPanel Orientation="Horizontal" Height="30">
-                        <TextBlock>Gestion Membre</TextBlock>
-                        <Image Source="/Images/membre.png" RenderTransformOrigin="0.714,1.975" Width="40"/>
+                        <TextBlock Style="{StaticResource headerStyle}"> Gestion Membre</TextBlock>
+                        <Image Source="/Images/membre.png" Width="40"/>
                     </StackPanel >
                 </TabItem.Header>
                 <Grid>
                     <ListView  Margin="356,57,30,98" x:Name="lvMembre" MouseLeftButtonUp="ShowSelected_Membre" Style="{StaticResource lvStyle}">
                         <ListView.View>
                             <GridView>
-                                <GridViewColumn Header="#"  DisplayMemberBinding="{Binding NoMembre}" />
-                                <GridViewColumn Header="Nom"  DisplayMemberBinding="{Binding Nom}" />
-                                <GridViewColumn Header="Prenom"  DisplayMemberBinding="{Binding Prenom}" />
-                                <GridViewColumn Header="Adresse"  DisplayMemberBinding="{Binding Adresse}" />
-                                <GridViewColumn Header="Telephone"  DisplayMemberBinding="{Binding Telephone}" />
-                                <GridViewColumn Header="Code Postal"  DisplayMemberBinding="{Binding CodePostal}" />
+                                <GridViewColumn Header="#" DisplayMemberBinding="{Binding NoMembre}" />
+                                <GridViewColumn Header="Nom" DisplayMemberBinding="{Binding Nom}" />
+                                <GridViewColumn Header="Prenom" DisplayMemberBinding="{Binding Prenom}" />
+                                <GridViewColumn Header="Adresse" DisplayMemberBinding="{Binding Adresse}" />
+                                <GridViewColumn Header="Telephone" DisplayMemberBinding="{Binding Telephone}" />
+                                <GridViewColumn Header="Code Postal" DisplayMemberBinding="{Binding CodePostal}" />
                             </GridView>
                         </ListView.View>
                     </ListView>
@@ -41,10 +41,10 @@
                     <Label Content="Nom" HorizontalAlignment="Left" Margin="33,100,0,0" VerticalAlignment="Top"/>
                     <Label Content="Prenom" HorizontalAlignment="Left" Margin="33,140,0,0" VerticalAlignment="Top"/>
                     <Label Content="Adresse" HorizontalAlignment="Left" Margin="33,180,0,0" VerticalAlignment="Top"/>
-                    <Label Content="Telephone" HorizontalAlignment="Left" Margin="33,220,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.462"/>
+                    <Label Content="Telephone" HorizontalAlignment="Left" Margin="33,220,0,0" VerticalAlignment="Top" />
                     <Label Content="CodePostal" HorizontalAlignment="Left" Margin="33,260,0,0" VerticalAlignment="Top"/>
                     <TextBox Name="edtNoMembre" HorizontalAlignment="Left" Height="23" Margin="109,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="169"  />
-                    <TextBox Name="edtNomMembre" HorizontalAlignment="Left" Height="23" Margin="109,100,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="169" RenderTransformOrigin="0.492,0.435" />
+                    <TextBox Name="edtNomMembre" HorizontalAlignment="Left" Height="23" Margin="109,100,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="169"  />
                     <TextBox Name="edtPrenomMembre" HorizontalAlignment="Left" Height="23" Margin="109,140,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="169"  />
                     <TextBox Name="edtAdresseMembre" HorizontalAlignment="Left" Height="23" Margin="109,180,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="169"  />
                     <TextBox Name="edtTelephoneMembre" HorizontalAlignment="Left" Height="23" Margin="109,220,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="169" />
@@ -57,8 +57,8 @@
             <TabItem>
                 <TabItem.Header>
                     <StackPanel Orientation="Horizontal" Height="30">
-                        <TextBlock>Gestion Employe</TextBlock>
-                        <Image Source="/Images/employe.png" RenderTransformOrigin="0.714,1.975" Width="40"/>
+                        <TextBlock Style="{StaticResource headerStyle}">Gestion Employe</TextBlock>
+                        <Image Source="/Images/employe.png" Width="40"/>
                     </StackPanel >
                 </TabItem.Header>
                 <Grid>
@@ -78,24 +78,24 @@
                     <Label Content="Nom" HorizontalAlignment="Left" Margin="33,100,0,0" VerticalAlignment="Top"/>
                     <Label Content="Prenom" HorizontalAlignment="Left" Margin="33,140,0,0" VerticalAlignment="Top"/>
                     <Label Content="Adresse" HorizontalAlignment="Left" Margin="33,180,0,0" VerticalAlignment="Top"/>
-                    <Label Content="Telephone" HorizontalAlignment="Left" Margin="33,220,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.462"/>
-                    <Label Content="CodePostal" HorizontalAlignment="Left" Margin="33,260,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Telephone" HorizontalAlignment="Left" Margin="33,220,0,0" VerticalAlignment="Top" />
+                    <Label Content="CodePostal" HorizontalAlignment="Left" Margin="33,260,0,0" VerticalAlignment="Top" />
                     <TextBox Name="edtNoEmploye" HorizontalAlignment="Left" Height="23" Margin="109,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="169" />
-                    <TextBox Name="edtNomEmploye" HorizontalAlignment="Left" Height="23" Margin="109,100,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="169"  />
-                    <TextBox Name="edtPrenomEmploye" HorizontalAlignment="Left" Height="23" Margin="109,140,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="169" />
+                    <TextBox Name="edtNomEmploye" HorizontalAlignment="Left" Height="23" Margin="109,100,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="169"   />
+                    <TextBox Name="edtPrenomEmploye" HorizontalAlignment="Left" Height="23" Margin="109,140,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="169"  />
                     <TextBox Name="edtAdresseEmploye" HorizontalAlignment="Left" Height="23" Margin="109,180,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="169" />
-                    <TextBox Name="edtTelephoneEmploye" HorizontalAlignment="Left" Height="23" Margin="109,220,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="169" />
+                    <TextBox Name="edtTelephoneEmploye" HorizontalAlignment="Left" Height="23" Margin="109,220,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="169"  />
                     <TextBox Name="edtCodePostalEmploye" HorizontalAlignment="Left" Height="23" Margin="109,260,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="169" />
-                    <Button Name ="btnAjouterEmploye" Content="Ajouter" HorizontalAlignment="Left" Margin="109,303,0,0" VerticalAlignment="Top" Width="75" Click="btnAjouterEmploye_Click" BorderBrush="#FF17E017"/>
-                    <Button Name="btnModifierEmploye" Content="Modifier" HorizontalAlignment="Left" Margin="109,328,0,0" VerticalAlignment="Top" Width="75" Click="btnModifierEmploye_Click" BorderBrush="#FF1D8AD4"/>
-                    <Button Name="btnSupprimerEmploye" Content="Supprimer" HorizontalAlignment="Left" Margin="204,303,0,0" VerticalAlignment="Top" Width="75" Click="btnSupprimerEmploye_Click" BorderBrush="#FFF10E0E"/>
+                    <Button Name ="btnAjouterEmploye" Content="Ajouter" HorizontalAlignment="Left"  Margin="109,303,0,0" VerticalAlignment="Top" Width="75" Click="btnAjouterEmploye_Click" BorderBrush="#FF17E017" />
+                    <Button Name="btnModifierEmploye" Content="Modifier" HorizontalAlignment="Left" Margin="109,328,0,0" VerticalAlignment="Top" Width="75" Click="btnModifierEmploye_Click" BorderBrush="#FF1D8AD4" />
+                    <Button Name="btnSupprimerEmploye" Content="Supprimer" HorizontalAlignment="Left" Margin="204,303,0,0" VerticalAlignment="Top" Width="75" Click="btnSupprimerEmploye_Click" BorderBrush="#FFF10E0E" />
                 </Grid>
-            </TabItem>
-            <TabItem>
+                </TabItem>
+                <TabItem>
                 <TabItem.Header>
                     <StackPanel Orientation="Horizontal" Height="30">
-                        <TextBlock>Gestion Livre</TextBlock>
-                        <Image Source="/Images/livre.png" RenderTransformOrigin="0.714,1.975" Width="40"/>
+                        <TextBlock Style="{StaticResource headerStyle}">Gestion Livre</TextBlock>
+                        <Image Source="/Images/livre.png" Width="40"/>
                     </StackPanel >
                 </TabItem.Header>
                 <Grid>
@@ -114,7 +114,7 @@
                     <Label Content="Titre" HorizontalAlignment="Left" Margin="33,100,0,0" VerticalAlignment="Top"/>
                     <Label Content="Quantite" HorizontalAlignment="Left" Margin="33,140,0,0" VerticalAlignment="Top"/>
                     <Label Content="Date" HorizontalAlignment="Left" Margin="33,180,0,0" VerticalAlignment="Top"/>
-                    <Label Content="Auteur" HorizontalAlignment="Left" Margin="33,220,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.462"/>
+                    <Label Content="Auteur" HorizontalAlignment="Left" Margin="33,220,0,0" VerticalAlignment="Top" />
                     <TextBox Name="edtNoLivre" HorizontalAlignment="Left" Height="23" Margin="109,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="169" />
                     <TextBox Name="edtTitreLivre" HorizontalAlignment="Left" Height="23" Margin="109,100,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="169" />
                     <TextBox Name="edtQuantiteLivre" HorizontalAlignment="Left" Height="23" Margin="109,140,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="169" />
@@ -124,12 +124,12 @@
                     <Button Name="btnModifierLivre" Content="Modifier" HorizontalAlignment="Left" Margin="109,328,0,0" VerticalAlignment="Top" Width="75" Click="btnModifierLivre_Click" BorderBrush="#FF1D8AD4"/>
                     <Button Name="btnSupprimerLivre" Content="Supprimer" HorizontalAlignment="Left" Margin="204,303,0,0" VerticalAlignment="Top" Width="75" Click="btnSupprimerLivre_Click" BorderBrush="#FFF10E0E"/>
                 </Grid>
-            </TabItem>
-            <TabItem>
+                </TabItem>
+                <TabItem>
                 <TabItem.Header>
                     <StackPanel Orientation="Horizontal" Height="30">
-                        <TextBlock>Gestion Location</TextBlock>
-                        <Image Source="/Images/rent.png" RenderTransformOrigin="0.714,1.975" Width="41"/>
+                        <TextBlock Style="{StaticResource headerStyle}">Gestion Location</TextBlock>
+                        <Image Source="/Images/rent.png" Width="40"/>
                     </StackPanel >
                 </TabItem.Header>
                 <Grid>

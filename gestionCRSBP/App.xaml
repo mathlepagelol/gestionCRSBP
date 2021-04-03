@@ -29,5 +29,8 @@
             <Setter Property="BorderThickness" Value="1" />
             <Setter Property="BorderBrush" Value="#FF1D8AD4" />
         </Style>
+        <Style x:Key="headerStyle" TargetType="{x:Type TextBlock}">
+            <Setter Property="FontWeight" Value="bold" />
+        </Style>
     </Application.Resources>
 </Application>
