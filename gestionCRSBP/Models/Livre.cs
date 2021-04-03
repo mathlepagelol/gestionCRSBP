@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace gestionCRSBP.Models
 {
-    class Livre
+    public class Livre
     {
         private string noSerie;
         public string NoSerie

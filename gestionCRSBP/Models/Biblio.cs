@@ -19,7 +19,7 @@ using System.Threading.Tasks;
 
 namespace gestionCRSBP.Models
 {
-    class Biblio
+    public class Biblio
     {
         private string nom;
         public string Nom
@@ -63,6 +63,36 @@ namespace gestionCRSBP.Models
             this.listeEmploye = new List<Employe>();
             this.listeMembre = new List<Membre>();
             this.listeLivre = new List<Livre>();
+        }
+
+        public Membre ObtenirMembre(Membre unMembre)
+        {
+            foreach (Membre membre in listeMembre)
+            {
+                if (membre.Equals(unMembre))
+                    return membre;
+            }
+            return null;
+        }
+
+        public Membre[] ObtenirListeMembre()
+        {
+            return listeMembre.ToArray();
+        }
+
+        public Employe ObtenirEmploye(Employe unEmploye)
+        {
+            foreach (Employe employe in listeEmploye)
+            {
+                if (employe.Equals(unEmploye))
+                    return employe;
+            }
+            return null;
+        }
+
+        public Employe[] ObtenirListeEmploye()
+        {
+            return listeEmploye.ToArray();
         }
 
         public override int GetHashCode()

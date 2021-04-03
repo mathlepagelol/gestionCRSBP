@@ -25,7 +25,7 @@ namespace gestionCRSBP
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void btnConnexion_Click(object sender, RoutedEventArgs e)
         {
             try
             {

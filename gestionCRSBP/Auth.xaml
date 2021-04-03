@@ -8,7 +8,7 @@
       Title="Auth" Height="678.902" Width="1226.59">
 
     <Grid Margin="100,10">
-        <Button Content="Connexion" HorizontalAlignment="Left" Margin="438,523,0,0" VerticalAlignment="Top" Width="76" Click="Button_Click" BorderBrush="#FF1243EA"/>
+        <Button Content="Connexion" HorizontalAlignment="Left" Margin="438,523,0,0" VerticalAlignment="Top" Width="76" Click="btnConnexion_Click" BorderBrush="#FF1243EA"/>
         <Image Margin="278,47,320,342" Source="/Images/crsbp.png" />
         <TextBox Name="edtUsername" HorizontalAlignment="Left" Height="24" Margin="378,412,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="201" BorderBrush="#FF1243EA"/>
         <PasswordBox Name="edtPassword" HorizontalAlignment="Left" Height="24" Margin="378,479,0,0" VerticalAlignment="Top" Width="201" BorderBrush="#FF1243EA"/>

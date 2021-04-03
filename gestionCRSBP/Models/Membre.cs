@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace gestionCRSBP.Models
 {
-    class Membre
+    public class Membre
     {
         private string noMembre;
         public string NoMembre

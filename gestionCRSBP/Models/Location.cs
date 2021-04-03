@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace gestionCRSBP.Models
 {
-    class Location
+    public class Location
     {
         private string noLocation;
         public string NoLocation
