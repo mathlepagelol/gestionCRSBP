@@ -55,6 +55,11 @@ namespace gestionCRSBP.Models
             return this.uneLocation;
         }
 
+        public override string ToString()
+        {
+            return (Prenom+" "+Nom);
+        }
+
         public override int GetHashCode()
         {
             return NoMembre.GetHashCode();

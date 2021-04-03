@@ -4,8 +4,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:gestionCRSBP"
-      mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      mc:Ignorable="d" Height="575" Width="900"
       Title="Home">
 
     <Grid>
@@ -16,7 +15,7 @@
             </MenuItem>
             <MenuItem Header="_?" Click="MenuAboutUs_Click"></MenuItem>
         </Menu>
-        <TabControl Margin="0,24,0,0">
+        <TabControl Margin="0,22,0,0">
             <TabItem>
                 <TabItem.Header>
                     <StackPanel Orientation="Horizontal" Height="30">
@@ -25,7 +24,7 @@
                     </StackPanel >
                 </TabItem.Header>
                 <Grid>
-                    <ListView  Margin="356,57,30,98" x:Name="lvMembre" MouseLeftButtonUp="ShowSelected_Membre" Style="{StaticResource lvStyle}">
+                    <ListView  Margin="356,57,30,268" x:Name="lvMembre" MouseLeftButtonUp="ShowSelected_Membre" Style="{StaticResource lvStyle}">
                         <ListView.View>
                             <GridView>
                                 <GridViewColumn Header="#" DisplayMemberBinding="{Binding NoMembre}" />
@@ -62,7 +61,7 @@
                     </StackPanel >
                 </TabItem.Header>
                 <Grid>
-                    <ListView Margin="356,57,30,98" Name="lvEmploye" MouseLeftButtonUp="ShowSelected_Employe" Style="{StaticResource lvStyle}">
+                    <ListView Margin="356,57,30,268" Name="lvEmploye" MouseLeftButtonUp="ShowSelected_Employe" Style="{StaticResource lvStyle}">
                         <ListView.View>
                             <GridView>
                                 <GridViewColumn Header="#"  DisplayMemberBinding="{Binding NoEmploye}" />
@@ -90,8 +89,8 @@
                     <Button Name="btnModifierEmploye" Content="Modifier" HorizontalAlignment="Left" Margin="109,328,0,0" VerticalAlignment="Top" Width="75" Click="btnModifierEmploye_Click" BorderBrush="#FF1D8AD4" />
                     <Button Name="btnSupprimerEmploye" Content="Supprimer" HorizontalAlignment="Left" Margin="204,303,0,0" VerticalAlignment="Top" Width="75" Click="btnSupprimerEmploye_Click" BorderBrush="#FFF10E0E" />
                 </Grid>
-                </TabItem>
-                <TabItem>
+            </TabItem>
+            <TabItem>
                 <TabItem.Header>
                     <StackPanel Orientation="Horizontal" Height="30">
                         <TextBlock Style="{StaticResource headerStyle}">Gestion Livre</TextBlock>
@@ -99,7 +98,7 @@
                     </StackPanel >
                 </TabItem.Header>
                 <Grid>
-                    <ListView Margin="358,57,30,98" Name="lvLivre" MouseLeftButtonUp="ShowSelected_Livre" Style="{StaticResource lvStyle}">
+                    <ListView Margin="356,57,30,268" Name="lvLivre" MouseLeftButtonUp="ShowSelected_Livre" Style="{StaticResource lvStyle}">
                         <ListView.View>
                             <GridView>
                                 <GridViewColumn Header="#"  DisplayMemberBinding="{Binding NoSerie}" />
@@ -116,16 +115,16 @@
                     <Label Content="Date" HorizontalAlignment="Left" Margin="33,180,0,0" VerticalAlignment="Top"/>
                     <Label Content="Auteur" HorizontalAlignment="Left" Margin="33,220,0,0" VerticalAlignment="Top" />
                     <TextBox Name="edtNoLivre" HorizontalAlignment="Left" Height="23" Margin="109,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="169" />
-                    <TextBox Name="edtTitreLivre" HorizontalAlignment="Left" Height="23" Margin="109,100,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="169" />
-                    <TextBox Name="edtQuantiteLivre" HorizontalAlignment="Left" Height="23" Margin="109,140,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="169" />
-                    <DatePicker Name="dpDateLivre" HorizontalAlignment="Left" Margin="109,180,0,0" VerticalAlignment="Top" Width="169" Style="{StaticResource dpStyle}"/>
-                    <TextBox Name="edtAuteurLivre" HorizontalAlignment="Left" Height="23" Margin="109,220,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="169" />
+                    <TextBox Name="edtTitreLivre" HorizontalAlignment="Left" Height="23" Margin="109,100,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="169"  />
+                    <TextBox Name="edtQuantiteLivre" HorizontalAlignment="Left" Height="23" Margin="109,140,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="169"  />
+                    <DatePicker Name="dpDateLivre" HorizontalAlignment="Left" Margin="109,180,0,0" VerticalAlignment="Top" Width="169" Style="{StaticResource dpStyle}" />
+                    <TextBox Name="edtAuteurLivre" HorizontalAlignment="Left" Height="23" Margin="109,220,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="169"  />
                     <Button Name ="btnAjouterLivre" Content="Ajouter" HorizontalAlignment="Left" Margin="109,303,0,0" VerticalAlignment="Top" Width="75" Click="btnAjouterLivre_Click" BorderBrush="#FF17E017"/>
                     <Button Name="btnModifierLivre" Content="Modifier" HorizontalAlignment="Left" Margin="109,328,0,0" VerticalAlignment="Top" Width="75" Click="btnModifierLivre_Click" BorderBrush="#FF1D8AD4"/>
                     <Button Name="btnSupprimerLivre" Content="Supprimer" HorizontalAlignment="Left" Margin="204,303,0,0" VerticalAlignment="Top" Width="75" Click="btnSupprimerLivre_Click" BorderBrush="#FFF10E0E"/>
                 </Grid>
-                </TabItem>
-                <TabItem>
+            </TabItem>
+            <TabItem>
                 <TabItem.Header>
                     <StackPanel Orientation="Horizontal" Height="30">
                         <TextBlock Style="{StaticResource headerStyle}">Gestion Location</TextBlock>
@@ -133,7 +132,49 @@
                     </StackPanel >
                 </TabItem.Header>
                 <Grid>
-
+                    <ListView Margin="398,44,44,305" Name="lvLocation" MouseLeftButtonUp="ShowSelected_Location" Style="{StaticResource lvStyle}">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="#"  DisplayMemberBinding="{Binding NoLocation}" />
+                                <GridViewColumn Header="Membre"  DisplayMemberBinding="{Binding unMembre}"/>
+                                <GridViewColumn Header="Date d'entrée"  DisplayMemberBinding="{Binding DateDebut}" />
+                                <GridViewColumn Header="Date de fin"  DisplayMemberBinding="{Binding DateFin}" />
+                                <GridViewColumn Header="Employe"  DisplayMemberBinding="{Binding unEmploye}" />
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                    <Label Content="No Location" HorizontalAlignment="Left" Margin="30,30,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Date d'enregistrement" HorizontalAlignment="Left" Margin="30,83,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Date de remise" HorizontalAlignment="Left" Margin="30,143,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Membre" HorizontalAlignment="Left" Margin="30,203,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Employe" HorizontalAlignment="Left" Margin="30,261,0,0" VerticalAlignment="Top"/>
+                    <TextBox Name="edtNoLocation" HorizontalAlignment="Left" Height="23" Margin="30,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="74" RenderTransformOrigin="0.483,0.522"/>
+                    <DatePicker Name="dpDateDebutLocation" HorizontalAlignment="Left" Margin="30,114,0,0" VerticalAlignment="Top" Style="{StaticResource dpStyle}"/>
+                    <DatePicker Name="dpDateFinLocation" HorizontalAlignment="Left" Margin="30,174,0,0" VerticalAlignment="Top" Style="{StaticResource dpStyle}"/>
+                    <ComboBox Name="cbxMembreLocation"  HorizontalAlignment="Left" Margin="30,234,0,0" VerticalAlignment="Top" Width="120"  />
+                    <ComboBox Name="cbxEmployeLocation" HorizontalAlignment="Left" Margin="30,292,0,0" VerticalAlignment="Top" Width="120" />
+                    <Button Name="btnInitialiserLocation" Content="Initialiser" HorizontalAlignment="Left" Margin="29,346,0,0" VerticalAlignment="Top" Width="75" Click="btnInitialiserLocation_Click" BorderBrush="#FF17E017"/>
+                    <Button Name="btnModifierLocation" Content="Modifier" HorizontalAlignment="Left" Margin="30,371,0,0" VerticalAlignment="Top" Width="75" Click="btnModifierLocation_Click" BorderBrush="#FF1D8AD4"/>
+                    <ListView  Name="lvLivreDispo"  Style="{StaticResource lvStyle}" Margin="644,242,43,145">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="Titre"  DisplayMemberBinding="{Binding Titre}" />
+                                <GridViewColumn Header="Quantite"  DisplayMemberBinding="{Binding Quantite}"/>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                    <Button Name="btnAjouterLivreLocation" Content="Ajouter" HorizontalAlignment="Left" Margin="398,371,0,0" VerticalAlignment="Top" Width="76" Height="20" BorderBrush="#FF17E017"/>
+                    <Button Name="btnRetirerLivreLocation" Content="Retirer" HorizontalAlignment="Left" Margin="479,371,0,0" Width="76" Height="20" VerticalAlignment="Top" BorderBrush="#FFF10E0E" />
+                    <ListView  Name="lvLocationMembre"  Style="{StaticResource lvStyle}" Margin="398,242,297,145">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="Titre"  DisplayMemberBinding="{Binding Titre}" />
+                                <GridViewColumn Header="Quantite"  DisplayMemberBinding="{Binding Quantite}"/>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                    <Label Content="La commande" HorizontalAlignment="Left" Margin="398,211,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Inventaire" HorizontalAlignment="Left" Margin="644,211,0,0" VerticalAlignment="Top"/>
                 </Grid>
             </TabItem>
         </TabControl>

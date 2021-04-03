@@ -4,16 +4,16 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:gestionCRSBP"
-      mc:Ignorable="d" d:DesignWidth="800"
-      Title="Auth" Height="678.902" Width="896.243">
+      mc:Ignorable="d" Height="575" Width="900"
+      Title="Auth">
 
     <Grid>
-        <Button Content="Connexion" HorizontalAlignment="Left" Margin="392,523,0,0" VerticalAlignment="Top" Width="76" Click="btnConnexion_Click" BorderBrush="#FF1243EA" RenderTransformOrigin="-0.026,0.45"/>
-        <Image Margin="278,47,320,342" Source="/Images/crsbp.png" />
-        <TextBox Name="edtUsername" HorizontalAlignment="Left" Height="24" Margin="330,412,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="201" BorderBrush="#FF1D8AD4"/>
-        <PasswordBox Name="edtPassword" HorizontalAlignment="Left" Height="24" Margin="330,479,0,0" VerticalAlignment="Top" Width="201" BorderBrush="#FF1D8AD4" />
-        <Label Content="Nom d'utilisateur" HorizontalAlignment="Left" Margin="330,381,0,0" VerticalAlignment="Top"/>
-        <Label Content="Mot de passe" HorizontalAlignment="Left" Margin="330,453,0,0" VerticalAlignment="Top" />
-        <Label Name="lblInvalid"  Visibility="Hidden" Content="Le nom d'utilisateur/le mot de passe est invalide" HorizontalAlignment="Left" Margin="292,342,0,0" VerticalAlignment="Top" Foreground="#FFEE0B0B"/>
+        <Button Content="Connexion" HorizontalAlignment="Left" Margin="404,423,0,0" VerticalAlignment="Top" Width="76" Click="btnConnexion_Click" BorderBrush="#FF1243EA" RenderTransformOrigin="-0.026,0.45"/>
+        <Image Margin="312,10,323,331" Source="/Images/crsbp.png" />
+        <TextBox Name="edtUsername" HorizontalAlignment="Left" Height="24" Margin="343,314,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="201" BorderBrush="#FF1D8AD4"/>
+        <PasswordBox Name="edtPassword" HorizontalAlignment="Left" Height="24" Margin="343,383,0,0" VerticalAlignment="Top" Width="201" BorderBrush="#FF1D8AD4" />
+        <Label Content="Nom d'utilisateur" HorizontalAlignment="Left" Margin="343,283,0,0" VerticalAlignment="Top"/>
+        <Label Content="Mot de passe" HorizontalAlignment="Left" Margin="343,352,0,0" VerticalAlignment="Top" />
+        <Label Name="lblInvalid"  Visibility="Hidden" Content="Le nom d'utilisateur/le mot de passe est invalide" HorizontalAlignment="Left" Margin="312,257,0,0" VerticalAlignment="Top" Foreground="#FFEE0B0B"/>
     </Grid>
 </Page>

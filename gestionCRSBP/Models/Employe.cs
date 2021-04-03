@@ -48,6 +48,11 @@ namespace gestionCRSBP.Models
             set { codePostal = value; }
         }
 
+        public override string ToString()
+        {
+            return (Prenom+" "+Nom);
+        }
+
         public override int GetHashCode()
         {
             return NoEmploye.GetHashCode();

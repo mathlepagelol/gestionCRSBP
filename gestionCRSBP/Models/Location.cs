@@ -15,15 +15,15 @@ namespace gestionCRSBP.Models
             set { noLocation = value; }
         }
 
-        private string dateDebut;
-        public string DateDebut
+        private DateTime dateDebut;
+        public DateTime DateDebut
         {
             get { return (dateDebut); }
             set { dateDebut = value; }
         }
 
-        private string dateFin;
-        public string DateFin
+        private DateTime dateFin;
+        public DateTime DateFin
         {
             get { return (dateFin); }
             set { dateFin = value; }
@@ -32,5 +32,14 @@ namespace gestionCRSBP.Models
         public Membre unMembre;
         public Employe unEmploye;
         public List<Livre> listeLivre = new List<Livre>();
+
+        public override int GetHashCode()
+        {
+            return NoLocation.GetHashCode();
+        }
+        public override bool Equals(object obj)
+        {
+            return ((obj != null) && (obj is Location) && (NoLocation.Equals((obj as Location).NoLocation)));
+        }
     }
 }

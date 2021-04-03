@@ -33,6 +33,7 @@ namespace gestionCRSBP
             edtNoMembre.Text = edtNomMembre.Text = edtPrenomMembre.Text = edtAdresseMembre.Text = edtCodePostalMembre.Text = edtTelephoneMembre.Text = "";
             edtNoEmploye.Text = edtNomEmploye.Text = edtPrenomEmploye.Text = edtAdresseEmploye.Text = edtCodePostalEmploye.Text = edtTelephoneEmploye.Text = "";
             edtNoLivre.Text = edtTitreLivre.Text = edtQuantiteLivre.Text = dpDateLivre.Text = edtAuteurLivre.Text = "";
+            edtNoLocation.Text = dpDateDebutLocation.Text = dpDateFinLocation.Text = dpDateLivre.Text = cbxMembreLocation.Text = cbxEmployeLocation.Text = "";
         }
 
         private void MenuQuitter_Click(object sender, RoutedEventArgs e)
@@ -53,6 +54,9 @@ namespace gestionCRSBP
                 crsbp.listeMembre.Add(new Membre() { NoMembre = edtNoMembre.Text, Nom = edtNomMembre.Text, Prenom = edtPrenomMembre.Text, Adresse = edtAdresseMembre.Text, Telephone = edtTelephoneMembre.Text, CodePostal = edtCodePostalMembre.Text });
                 lvMembre.ItemsSource = null;
                 lvMembre.ItemsSource = crsbp.listeMembre;
+                cbxMembreLocation.Items.Clear();
+                foreach (Membre membre in crsbp.listeMembre)
+                {cbxMembreLocation.Items.Add(membre);}
                 viderChamps();
             }
             catch (Exception ex)
@@ -131,8 +135,12 @@ namespace gestionCRSBP
                 crsbp.listeEmploye.Add(new Employe() { NoEmploye = edtNoEmploye.Text, Nom = edtNomEmploye.Text, Prenom = edtPrenomEmploye.Text, Adresse = edtAdresseEmploye.Text, Telephone = edtTelephoneEmploye.Text, CodePostal = edtCodePostalEmploye.Text });
                 lvEmploye.ItemsSource = null;
                 lvEmploye.ItemsSource = crsbp.listeEmploye;
+                cbxEmployeLocation.Items.Clear();
+                foreach (Employe employe in crsbp.listeEmploye)
+                {cbxEmployeLocation.Items.Add(employe);}
                 viderChamps();
             }
+
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
@@ -215,7 +223,6 @@ namespace gestionCRSBP
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.Message);
             }
         }
@@ -272,6 +279,73 @@ namespace gestionCRSBP
                 edtQuantiteLivre.Text = monLivre.Qte.ToString();
                 dpDateLivre.Text = monLivre.DatePublication.ToString();
                 edtAuteurLivre.Text = monLivre.Auteur;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        /* -------------- Fonctions de gestion des locations ------------------------- */
+
+        private void btnInitialiserLocation_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                Employe monEmploye;
+                monEmploye = crsbp.ObtenirEmploye(new Employe() { NoEmploye = crsbp.ObtenirListeEmploye()[cbxEmployeLocation.SelectedIndex].NoEmploye });
+                Membre monMembre;
+                monMembre = crsbp.ObtenirMembre(new Membre() { NoMembre = crsbp.ObtenirListeMembre()[cbxMembreLocation.SelectedIndex].NoMembre });
+                
+                crsbp.listeLocation.Add(new Location() { NoLocation = edtNoLocation.Text, DateDebut = DateTime.Parse(dpDateDebutLocation.Text), DateFin = DateTime.Parse(dpDateFinLocation.Text), unEmploye = monEmploye, unMembre = monMembre});
+                lvLocation.ItemsSource = null;
+                lvLocation.ItemsSource = crsbp.listeLocation;
+                viderChamps();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        private void btnModifierLocation_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                Location maLocation;
+                maLocation = crsbp.ObtenirLocation(new Location() { NoLocation = crsbp.ObtenirListeLocation()[lvLocation.SelectedIndex].NoLocation });
+
+                Employe monEmploye;
+                monEmploye = crsbp.ObtenirEmploye(new Employe() { NoEmploye = crsbp.ObtenirListeEmploye()[cbxEmployeLocation.SelectedIndex].NoEmploye });
+                Membre monMembre;
+                monMembre = crsbp.ObtenirMembre(new Membre() { NoMembre = crsbp.ObtenirListeMembre()[cbxMembreLocation.SelectedIndex].NoMembre });
+
+                maLocation.NoLocation = edtNoLocation.Text;
+                maLocation.DateDebut = DateTime.Parse(dpDateDebutLocation.Text);
+                maLocation.DateFin = DateTime.Parse(dpDateFinLocation.Text);
+                maLocation.unMembre = monMembre;
+                maLocation.unEmploye = monEmploye;
+                lvLocation.ItemsSource = null;
+                lvLocation.ItemsSource = crsbp.listeLocation;
+                MessageBox.Show("Modification réussie");
+                viderChamps();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ShowSelected_Location(object sender, MouseButtonEventArgs e)
+        {
+            try
+            {
+                Location maLocation;
+                maLocation = crsbp.ObtenirLocation(new Location() { NoLocation = crsbp.ObtenirListeLocation()[lvLocation.SelectedIndex].NoLocation });
+                edtNoLocation.Text = maLocation.NoLocation;
+                dpDateDebutLocation.Text = maLocation.DateDebut.ToString();
+                dpDateFinLocation.Text = maLocation.DateFin.ToString();
+                cbxMembreLocation.Text = maLocation.unMembre.ToString();
+                cbxEmployeLocation.Text = maLocation.unEmploye.ToString();
             }
             catch (Exception ex)
             {

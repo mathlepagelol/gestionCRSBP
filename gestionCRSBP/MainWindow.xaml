@@ -5,6 +5,6 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:gestionCRSBP"
         mc:Ignorable="d"
-        Title="Gestion CRSBP" Height="678.902" Width="896.243"
+        Title="Gestion CRSBP" Height="575" Width="900.00"
         Source="Auth.xaml">
 </NavigationWindow>
