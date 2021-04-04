@@ -43,10 +43,51 @@
       <Telephone>418-888-6666</Telephone>
       <CodePostal>G5R6T4</CodePostal>
     </Membre>
+    <Membre>
+      <NoMembre>4</NoMembre>
+      <Nom>Lepage</Nom>
+      <Prenom>Carl</Prenom>
+      <Adresse>75 rue Gatineau</Adresse>
+      <Telephone>418-777-3333</Telephone>
+      <CodePostal>J8Y5C3</CodePostal>
+    </Membre>
   </listeMembre>
-  <listeLivre />
+  <listeLivre>
+    <Livre>
+      <NoSerie>1</NoSerie>
+      <Titre>Harry Potter</Titre>
+      <Qte>5</Qte>
+      <DatePublication>2021-04-15T00:00:00</DatePublication>
+      <Auteur>JK Rowling</Auteur>
+    </Livre>
+    <Livre>
+      <NoSerie>2</NoSerie>
+      <Titre>The Lord of the Ring</Titre>
+      <Qte>5</Qte>
+      <DatePublication>2021-04-15T00:00:00</DatePublication>
+      <Auteur>Tolkien</Auteur>
+    </Livre>
+    <Livre>
+      <NoSerie>3</NoSerie>
+      <Titre>Goosebumps III</Titre>
+      <Qte>5</Qte>
+      <DatePublication>2021-04-22T00:00:00</DatePublication>
+      <Auteur>R.L Stine</Auteur>
+    </Livre>
+    <Livre>
+      <NoSerie>4</NoSerie>
+      <Titre>Atomic Habit</Titre>
+      <Qte>5</Qte>
+      <DatePublication>2021-04-11T00:00:00</DatePublication>
+      <Auteur>James Clear</Auteur>
+    </Livre>
+  </listeLivre>
   <listeLocation>
     <Location>
+      <listeLivre />
+      <NoLocation>1</NoLocation>
+      <DateDebut>2021-04-17T00:00:00</DateDebut>
+      <DateFin>2021-04-07T00:00:00</DateFin>
       <unMembre>
         <NoMembre>3</NoMembre>
         <Nom>Emond </Nom>
@@ -63,12 +104,12 @@
         <Telephone>418-111-2222</Telephone>
         <CodePostal>G5R3W1</CodePostal>
       </unEmploye>
-      <listeLivre />
-      <NoLocation>1</NoLocation>
-      <DateDebut>2021-04-17T00:00:00</DateDebut>
-      <DateFin>2021-04-07T00:00:00</DateFin>
     </Location>
     <Location>
+      <listeLivre />
+      <NoLocation>2</NoLocation>
+      <DateDebut>2021-04-25T00:00:00</DateDebut>
+      <DateFin>2021-04-12T00:00:00</DateFin>
       <unMembre>
         <NoMembre>2</NoMembre>
         <Nom>Lapointe</Nom>
@@ -85,12 +126,12 @@
         <Telephone>418-666-7777</Telephone>
         <CodePostal>G5R5Z2</CodePostal>
       </unEmploye>
-      <listeLivre />
-      <NoLocation>2</NoLocation>
-      <DateDebut>2021-04-25T00:00:00</DateDebut>
-      <DateFin>2021-04-12T00:00:00</DateFin>
     </Location>
     <Location>
+      <listeLivre />
+      <NoLocation>3</NoLocation>
+      <DateDebut>2021-04-20T00:00:00</DateDebut>
+      <DateFin>2021-04-25T00:00:00</DateFin>
       <unMembre>
         <NoMembre>1</NoMembre>
         <Nom>Lepage</Nom>
@@ -107,12 +148,12 @@
         <Telephone>418-111-2222</Telephone>
         <CodePostal>G5R3W1</CodePostal>
       </unEmploye>
-      <listeLivre />
-      <NoLocation>3</NoLocation>
-      <DateDebut>2021-04-20T00:00:00</DateDebut>
-      <DateFin>2021-04-25T00:00:00</DateFin>
     </Location>
     <Location>
+      <listeLivre />
+      <NoLocation>4</NoLocation>
+      <DateDebut>2021-04-13T00:00:00</DateDebut>
+      <DateFin>2021-04-18T00:00:00</DateFin>
       <unMembre>
         <NoMembre>3</NoMembre>
         <Nom>Emond </Nom>
@@ -129,10 +170,28 @@
         <Telephone>418-111-2222</Telephone>
         <CodePostal>G5R3W1</CodePostal>
       </unEmploye>
+    </Location>
+    <Location>
       <listeLivre />
-      <NoLocation>4</NoLocation>
-      <DateDebut>2021-04-13T00:00:00</DateDebut>
-      <DateFin>2021-04-18T00:00:00</DateFin>
+      <NoLocation>5</NoLocation>
+      <DateDebut>2021-04-23T00:00:00</DateDebut>
+      <DateFin>2021-04-13T00:00:00</DateFin>
+      <unMembre>
+        <NoMembre>4</NoMembre>
+        <Nom>Lepage</Nom>
+        <Prenom>Carl</Prenom>
+        <Adresse>75 rue Gatineau</Adresse>
+        <Telephone>418-777-3333</Telephone>
+        <CodePostal>J8Y5C3</CodePostal>
+      </unMembre>
+      <unEmploye>
+        <NoEmploye>1</NoEmploye>
+        <Nom>Potvin</Nom>
+        <Prenom>Lise</Prenom>
+        <Adresse>10 rue Alain</Adresse>
+        <Telephone>418-666-7777</Telephone>
+        <CodePostal>G5R5Z2</CodePostal>
+      </unEmploye>
     </Location>
   </listeLocation>
   <Nom>CRSBP du Bas-St-Laurent</Nom>

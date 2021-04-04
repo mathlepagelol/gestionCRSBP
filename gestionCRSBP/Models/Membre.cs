@@ -48,13 +48,6 @@ namespace gestionCRSBP.Models
             set { codePostal = value; }
         }
 
-        public Location uneLocation;
-
-        public Location obtenirLocation()
-        {
-            return this.uneLocation;
-        }
-
         public override string ToString()
         {
             return (Prenom+" "+Nom);

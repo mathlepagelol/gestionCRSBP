@@ -29,9 +29,59 @@ namespace gestionCRSBP.Models
             set { dateFin = value; }
         }
 
-        public Membre unMembre;
-        public Employe unEmploye;
+        public Membre unMembre { get; set; }
+        public Employe unEmploye { get; set; }
+
         public List<Livre> listeLivre = new List<Livre>();
+
+        public Membre ObtenirMembre()
+        {
+            return unMembre;
+        }
+
+        public Employe ObtenirEmploye()
+        {
+            return unEmploye;
+        }
+
+        public Livre[] ObtenirListeLivre()
+        {
+            return listeLivre.ToArray();
+        }
+
+        public void AjouterLivre(Livre unLivre)
+        {
+            //if (SiLivrePresent(unLivre))
+            //    return false;
+            listeLivre.Add(unLivre);
+        }
+
+        public Livre ObtenirLivre(Livre unLivre)
+        {
+            foreach (Livre livre in listeLivre)
+            {
+                if (livre.Equals(unLivre))
+                    return livre;
+            }
+            return null;
+        }
+
+        public void EnleverLivre(Livre unLivre)
+        {
+            //if (!SiLivrePresent(unLivre))
+            //    return false;
+            listeLivre.Remove(unLivre);
+        }
+
+        //public bool SiLivrePresent(Livre unLivre)
+        //{
+        //    foreach (Livre livre in listeLivre)
+        //    {
+        //        if (livre.Equals(unLivre))
+        //            return true;
+        //    }
+        //    return false;
+        //}
 
         public override int GetHashCode()
         {

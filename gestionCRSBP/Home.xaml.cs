@@ -87,14 +87,22 @@ namespace gestionCRSBP
 
         public void peuplerLesListes()
         {
+            lvMembre.ItemsSource = null;
             lvMembre.ItemsSource = crsbp.listeMembre;
+            lvEmploye.ItemsSource = null;
             lvEmploye.ItemsSource = crsbp.listeEmploye;
+            lvLivre.ItemsSource = null;
             lvLivre.ItemsSource = crsbp.listeLivre;
+            lvLocation.ItemsSource = null;
             lvLocation.ItemsSource = crsbp.listeLocation;
+            lvLivreDispo.ItemsSource = null;
+            lvLivreDispo.ItemsSource = crsbp.listeLivre;
+            cbxMembreLocation.Items.Clear();
             foreach (Membre membre in crsbp.listeMembre)
             { cbxMembreLocation.Items.Add(membre); }
+            cbxEmployeLocation.Items.Clear();
             foreach (Employe employe in crsbp.listeEmploye)
-            { cbxEmployeLocation.Items.Add(employe); }
+            { cbxEmployeLocation.Items.Add(employe);}
         }
 
         /* -------------- Fonctions de gestion des membres ------------------------- */
@@ -103,11 +111,7 @@ namespace gestionCRSBP
             try
             {
                 crsbp.listeMembre.Add(new Membre() { NoMembre = edtNoMembre.Text, Nom = edtNomMembre.Text, Prenom = edtPrenomMembre.Text, Adresse = edtAdresseMembre.Text, Telephone = edtTelephoneMembre.Text, CodePostal = edtCodePostalMembre.Text });
-                lvMembre.ItemsSource = null;
-                lvMembre.ItemsSource = crsbp.listeMembre;
-                cbxMembreLocation.Items.Clear();
-                foreach (Membre membre in crsbp.listeMembre)
-                {cbxMembreLocation.Items.Add(membre);}
+                peuplerLesListes();
                 viderChamps();
             }
             catch (Exception ex)
@@ -128,9 +132,8 @@ namespace gestionCRSBP
                 monMembre.Adresse = edtAdresseMembre.Text;
                 monMembre.Telephone = edtTelephoneMembre.Text;
                 monMembre.CodePostal = edtCodePostalMembre.Text;
-                lvMembre.ItemsSource = null;
-                lvMembre.ItemsSource = crsbp.listeMembre;
                 MessageBox.Show("Modification réussie");
+                peuplerLesListes();
                 viderChamps();
             }
             catch (Exception ex)
@@ -145,16 +148,13 @@ namespace gestionCRSBP
             {
                 Membre monMembre;
                 monMembre = crsbp.ObtenirMembre(new Membre() { NoMembre = crsbp.ObtenirListeMembre()[lvMembre.SelectedIndex].NoMembre });
-
                 crsbp.EnleverMembre(monMembre);
-                lvMembre.ItemsSource = null;
-                lvMembre.ItemsSource = crsbp.listeMembre;
                 MessageBox.Show("Suppression réussie");
+                peuplerLesListes();
                 viderChamps();
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.Message);
             }
         }
@@ -184,11 +184,7 @@ namespace gestionCRSBP
             try
             {
                 crsbp.listeEmploye.Add(new Employe() { NoEmploye = edtNoEmploye.Text, Nom = edtNomEmploye.Text, Prenom = edtPrenomEmploye.Text, Adresse = edtAdresseEmploye.Text, Telephone = edtTelephoneEmploye.Text, CodePostal = edtCodePostalEmploye.Text });
-                lvEmploye.ItemsSource = null;
-                lvEmploye.ItemsSource = crsbp.listeEmploye;
-                cbxEmployeLocation.Items.Clear();
-                foreach (Employe employe in crsbp.listeEmploye)
-                {cbxEmployeLocation.Items.Add(employe);}
+                peuplerLesListes();
                 viderChamps();
             }
 
@@ -204,15 +200,13 @@ namespace gestionCRSBP
             {
                 Employe monEmploye;
                 monEmploye = crsbp.ObtenirEmploye(new Employe() { NoEmploye = crsbp.ObtenirListeEmploye()[lvEmploye.SelectedIndex].NoEmploye });
-
                 monEmploye.Nom = edtNomEmploye.Text;
                 monEmploye.Prenom = edtPrenomEmploye.Text;
                 monEmploye.Adresse = edtAdresseEmploye.Text;
                 monEmploye.Telephone = edtTelephoneEmploye.Text;
                 monEmploye.CodePostal = edtCodePostalEmploye.Text;
-                lvEmploye.ItemsSource = null;
-                lvEmploye.ItemsSource = crsbp.listeEmploye;
                 MessageBox.Show("Modification réussie");
+                peuplerLesListes();
                 viderChamps();
             }
             catch (Exception ex)
@@ -227,11 +221,9 @@ namespace gestionCRSBP
             {
                 Employe monEmploye;
                 monEmploye = crsbp.ObtenirEmploye(new Employe() { NoEmploye = crsbp.ObtenirListeEmploye()[lvEmploye.SelectedIndex].NoEmploye });
-
                 crsbp.EnleverEmploye(monEmploye);
-                lvEmploye.ItemsSource = null;
-                lvEmploye.ItemsSource = crsbp.listeEmploye;
                 MessageBox.Show("Suppression réussie");
+                peuplerLesListes();
                 viderChamps();
             }
             catch (Exception ex)
@@ -256,7 +248,6 @@ namespace gestionCRSBP
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.Message);
             }
         }
@@ -268,8 +259,7 @@ namespace gestionCRSBP
             try
             {
                 crsbp.listeLivre.Add(new Livre() { NoSerie = edtNoLivre.Text, Titre = edtTitreLivre.Text, Qte = int.Parse(edtQuantiteLivre.Text), DatePublication = DateTime.Parse(dpDateLivre.Text), Auteur = edtAuteurLivre.Text });
-                lvLivre.ItemsSource = null;
-                lvLivre.ItemsSource = crsbp.listeLivre;
+                peuplerLesListes();
                 viderChamps();
             }
             catch (Exception ex)
@@ -284,14 +274,12 @@ namespace gestionCRSBP
             {
                 Livre monLivre;
                 monLivre = crsbp.ObtenirLivre(new Livre() { NoSerie = crsbp.ObtenirListeLivre()[lvLivre.SelectedIndex].NoSerie });
-
                 monLivre.Titre = edtTitreLivre.Text;
                 monLivre.Qte = int.Parse(edtQuantiteLivre.Text);
                 monLivre.DatePublication = DateTime.Parse(dpDateLivre.Text);
                 monLivre.Auteur = edtAuteurLivre.Text;
-                lvLivre.ItemsSource = null;
-                lvLivre.ItemsSource = crsbp.listeLivre;
                 MessageBox.Show("Modification réussie");
+                peuplerLesListes();
                 viderChamps();
             }
             catch (Exception ex)
@@ -306,11 +294,9 @@ namespace gestionCRSBP
             {
                 Livre monLivre;
                 monLivre = crsbp.ObtenirLivre(new Livre() { NoSerie = crsbp.ObtenirListeLivre()[lvLivre.SelectedIndex].NoSerie });
-
                 crsbp.EnleverLivre(monLivre);
-                lvLivre.ItemsSource = null;
-                lvLivre.ItemsSource = crsbp.listeLivre;
                 MessageBox.Show("Suppression réussie");
+                peuplerLesListes();
                 viderChamps();
             }
             catch (Exception ex)
@@ -347,10 +333,8 @@ namespace gestionCRSBP
                 monEmploye = crsbp.ObtenirEmploye(new Employe() { NoEmploye = crsbp.ObtenirListeEmploye()[cbxEmployeLocation.SelectedIndex].NoEmploye });
                 Membre monMembre;
                 monMembre = crsbp.ObtenirMembre(new Membre() { NoMembre = crsbp.ObtenirListeMembre()[cbxMembreLocation.SelectedIndex].NoMembre });
-                
                 crsbp.listeLocation.Add(new Location() { NoLocation = edtNoLocation.Text, DateDebut = DateTime.Parse(dpDateDebutLocation.Text), DateFin = DateTime.Parse(dpDateFinLocation.Text), unEmploye = monEmploye, unMembre = monMembre});
-                lvLocation.ItemsSource = null;
-                lvLocation.ItemsSource = crsbp.listeLocation;
+                peuplerLesListes();
                 viderChamps();
             }
             catch (Exception ex)
@@ -375,9 +359,8 @@ namespace gestionCRSBP
                 maLocation.DateFin = DateTime.Parse(dpDateFinLocation.Text);
                 maLocation.unMembre = monMembre;
                 maLocation.unEmploye = monEmploye;
-                lvLocation.ItemsSource = null;
-                lvLocation.ItemsSource = crsbp.listeLocation;
                 MessageBox.Show("Modification réussie");
+                peuplerLesListes();
                 viderChamps();
             }
             catch (Exception ex)
@@ -397,6 +380,9 @@ namespace gestionCRSBP
                 dpDateFinLocation.Text = maLocation.DateFin.ToString();
                 cbxMembreLocation.Text = maLocation.unMembre.ToString();
                 cbxEmployeLocation.Text = maLocation.unEmploye.ToString();
+                
+                lvLocationMembre.ItemsSource = null;
+                lvLocationMembre.ItemsSource = maLocation.listeLivre;
             }
             catch (Exception ex)
             {
@@ -404,6 +390,62 @@ namespace gestionCRSBP
             }
         }
 
-        
+        private void btnAjouterLivreLocation_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                Location maLocation;
+                maLocation = crsbp.ObtenirLocation(new Location() { NoLocation = crsbp.ObtenirListeLocation()[lvLocation.SelectedIndex].NoLocation });
+                Livre monLivre;
+                monLivre = crsbp.ObtenirLivre(new Livre() { NoSerie = crsbp.ObtenirListeLivre()[lvLivreDispo.SelectedIndex].NoSerie });
+                if (monLivre.Qte > 0 && monLivre.Qte >= int.Parse(edtQteLocation.Text))
+                {
+                    maLocation.AjouterLivre(new Livre() { NoSerie = monLivre.NoSerie, Titre = monLivre.Titre, Qte = int.Parse(edtQteLocation.Text), DatePublication = monLivre.DatePublication, Auteur = monLivre.Auteur });
+                    monLivre.Qte = monLivre.Qte - int.Parse(edtQteLocation.Text);
+                    lvLocationMembre.ItemsSource = null;
+                    lvLocationMembre.ItemsSource = maLocation.listeLivre;
+                    peuplerLesListes();
+                }
+                else
+                {
+                    MessageBox.Show("Quantité insuffisante...");
+                }
+                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnRetirerLivreLocation_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                Location maLocation;
+                maLocation = crsbp.ObtenirLocation(new Location() { NoLocation = crsbp.ObtenirListeLocation()[lvLocation.SelectedIndex].NoLocation });
+                Livre monLivre; Livre livreOriginal;
+                
+                monLivre = maLocation.ObtenirLivre(new Livre() { NoSerie = maLocation.ObtenirListeLivre()[lvLocationMembre.SelectedIndex].NoSerie });
+                livreOriginal = crsbp.ObtenirLivre(new Livre() { NoSerie = monLivre.NoSerie });
+
+                if (monLivre.Qte > 0 && int.Parse(edtQteLocation.Text) <= monLivre.Qte)
+                {
+                    monLivre.Qte = monLivre.Qte - int.Parse(edtQteLocation.Text);
+                    livreOriginal.Qte = livreOriginal.Qte + int.Parse(edtQteLocation.Text);
+                    if (monLivre.Qte <= 0)
+                        maLocation.EnleverLivre(monLivre);
+                    lvLocationMembre.ItemsSource = null;
+                    lvLocationMembre.ItemsSource = maLocation.listeLivre;
+                    peuplerLesListes();
+                }
+                else
+                    MessageBox.Show("Vous ne possédez pas en main autant de copie...");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }

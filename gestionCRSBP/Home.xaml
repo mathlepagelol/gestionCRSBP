@@ -104,7 +104,7 @@
                                 <GridViewColumn Header="#"  DisplayMemberBinding="{Binding NoSerie}" />
                                 <GridViewColumn Header="Titre"  DisplayMemberBinding="{Binding Titre}" />
                                 <GridViewColumn Header="Quantite"  DisplayMemberBinding="{Binding Qte}" />
-                                <GridViewColumn Header="Date d'apparition" DisplayMemberBinding="{Binding DatePublication}" />
+                                <GridViewColumn Header="Date d'apparition" DisplayMemberBinding="{Binding DatePublication, StringFormat=d}" />
                                 <GridViewColumn Header="Auteur(e)"  DisplayMemberBinding="{Binding Auteur}" />
                             </GridView>
                         </ListView.View>
@@ -136,9 +136,9 @@
                         <ListView.View>
                             <GridView>
                                 <GridViewColumn Header="#"  DisplayMemberBinding="{Binding NoLocation}" />
-                                <GridViewColumn Header="Membre"  DisplayMemberBinding="{Binding unMembre.Nom, UpdateSourceTrigger=PropertyChanged}"/>
-                                <GridViewColumn Header="Date d'entrée"  DisplayMemberBinding="{Binding DateDebut}" />
-                                <GridViewColumn Header="Date de fin"  DisplayMemberBinding="{Binding DateFin}" />
+                                <GridViewColumn Header="Membre"  DisplayMemberBinding="{Binding unMembre}"/>
+                                <GridViewColumn Header="Date d'entrée"  DisplayMemberBinding="{Binding DateDebut, StringFormat=d}" />
+                                <GridViewColumn Header="Date de fin"  DisplayMemberBinding="{Binding DateFin ,StringFormat=d}" />
                                 <GridViewColumn Header="Employe"  DisplayMemberBinding="{Binding unEmploye}" />
                             </GridView>
                         </ListView.View>
@@ -159,22 +159,24 @@
                         <ListView.View>
                             <GridView>
                                 <GridViewColumn Header="Titre"  DisplayMemberBinding="{Binding Titre}" />
-                                <GridViewColumn Header="Quantite"  DisplayMemberBinding="{Binding Quantite}"/>
+                                <GridViewColumn Header="Quantite"  DisplayMemberBinding="{Binding Qte}"/>
                             </GridView>
                         </ListView.View>
                     </ListView>
-                    <Button Name="btnAjouterLivreLocation" Content="Ajouter" HorizontalAlignment="Left" Margin="398,371,0,0" VerticalAlignment="Top" Width="76" Height="20" BorderBrush="#FF17E017"/>
-                    <Button Name="btnRetirerLivreLocation" Content="Retirer" HorizontalAlignment="Left" Margin="479,371,0,0" Width="76" Height="20" VerticalAlignment="Top" BorderBrush="#FFF10E0E" />
+                    <Button Name="btnAjouterLivreLocation" Content="Ajouter" HorizontalAlignment="Left" Margin="398,368,0,0" VerticalAlignment="Top" Width="76" Height="20" BorderBrush="#FF17E017" Click="btnAjouterLivreLocation_Click"/>
+                    <Button Name="btnRetirerLivreLocation" Content="Retirer" HorizontalAlignment="Left" Margin="479,368,0,0" Width="76" Height="20" VerticalAlignment="Top" BorderBrush="#FFF10E0E" Click="btnRetirerLivreLocation_Click" />
                     <ListView  Name="lvLocationMembre"  Style="{StaticResource lvStyle}" Margin="398,242,297,145">
                         <ListView.View>
                             <GridView>
                                 <GridViewColumn Header="Titre"  DisplayMemberBinding="{Binding Titre}" />
-                                <GridViewColumn Header="Quantite"  DisplayMemberBinding="{Binding Quantite}"/>
+                                <GridViewColumn Header="Quantite"  DisplayMemberBinding="{Binding Qte}"/>
                             </GridView>
                         </ListView.View>
                     </ListView>
-                    <Label Content="La commande" HorizontalAlignment="Left" Margin="398,211,0,0" VerticalAlignment="Top"/>
-                    <Label Content="Inventaire" HorizontalAlignment="Left" Margin="644,211,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Location actuelle" HorizontalAlignment="Left" Margin="398,211,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Livres disponibles" HorizontalAlignment="Left" Margin="644,211,0,0" VerticalAlignment="Top"/>
+                    <TextBox Name="edtQteLocation" HorizontalAlignment="Left" Height="23" Margin="609,295,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="27"/>
+                    <Label Content="Qte" HorizontalAlignment="Left" Margin="607,269,0,0" VerticalAlignment="Top"/>
                 </Grid>
             </TabItem>
         </TabControl>
