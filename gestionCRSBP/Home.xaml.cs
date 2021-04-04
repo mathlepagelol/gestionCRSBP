@@ -13,6 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using gestionCRSBP.Models;
+using System.IO;
+using System.Xml.Serialization;
 
 namespace gestionCRSBP
 {
@@ -26,6 +28,17 @@ namespace gestionCRSBP
         public Home()
         {
             InitializeComponent();
+            if (File.Exists("gestionCRSBP.xml"))
+            {
+                XmlSerializer leFichierCRSBP = new XmlSerializer(typeof(Biblio));
+
+                FileStream fichierLogique;
+
+                fichierLogique = File.OpenRead("gestionCRSBP.xml");
+                crsbp = (Biblio)leFichierCRSBP.Deserialize(fichierLogique);
+                fichierLogique.Close();
+            }
+            peuplerLesListes();
         }
 
         public void viderChamps()
@@ -38,12 +51,50 @@ namespace gestionCRSBP
 
         private void MenuQuitter_Click(object sender, RoutedEventArgs e)
         {
+           
             App.Current.Shutdown();
         }
 
         private void MenuAboutUs_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("Application de gestion des locations pour le Réseau BIBLIO du Bas-Saint-Laurent \n\n Auteur : Mathieu Lepage \n Version : 1.0");
+        }
+
+        private void MenuSauvegarder_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                if (File.Exists("gestionCRSBP.xml"))
+                {
+                    File.Delete("gestionCRSBP.xml");
+                }
+                XmlSerializer leFichierCRSBP = new XmlSerializer(typeof(Biblio));
+                FileStream fichierLogique;
+
+                using (fichierLogique = File.OpenWrite("gestionCRSBP.xml"))
+                {
+                    leFichierCRSBP.Serialize(fichierLogique, crsbp);
+                }
+                MessageBox.Show("Sauvegarde dans le fichier XML réussie");
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        public void peuplerLesListes()
+        {
+            lvMembre.ItemsSource = crsbp.listeMembre;
+            lvEmploye.ItemsSource = crsbp.listeEmploye;
+            lvLivre.ItemsSource = crsbp.listeLivre;
+            lvLocation.ItemsSource = crsbp.listeLocation;
+            foreach (Membre membre in crsbp.listeMembre)
+            { cbxMembreLocation.Items.Add(membre); }
+            foreach (Employe employe in crsbp.listeEmploye)
+            { cbxEmployeLocation.Items.Add(employe); }
         }
 
         /* -------------- Fonctions de gestion des membres ------------------------- */
@@ -352,5 +403,7 @@ namespace gestionCRSBP
                 MessageBox.Show(ex.Message);
             }
         }
+
+        
     }
 }

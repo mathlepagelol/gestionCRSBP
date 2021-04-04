@@ -10,7 +10,7 @@
     <Grid>
         <Menu>
             <MenuItem Header="_Fichier">
-                <MenuItem Header="_Sauvegarder" HorizontalAlignment="Left"/>
+                <MenuItem Header="_Sauvegarder" HorizontalAlignment="Left" Click="MenuSauvegarder_Click"/>
                 <MenuItem Header="_Quitter" HorizontalAlignment="Left" Click="MenuQuitter_Click"/>
             </MenuItem>
             <MenuItem Header="_?" Click="MenuAboutUs_Click"></MenuItem>
@@ -136,7 +136,7 @@
                         <ListView.View>
                             <GridView>
                                 <GridViewColumn Header="#"  DisplayMemberBinding="{Binding NoLocation}" />
-                                <GridViewColumn Header="Membre"  DisplayMemberBinding="{Binding unMembre}"/>
+                                <GridViewColumn Header="Membre"  DisplayMemberBinding="{Binding unMembre.Nom, UpdateSourceTrigger=PropertyChanged}"/>
                                 <GridViewColumn Header="Date d'entrée"  DisplayMemberBinding="{Binding DateDebut}" />
                                 <GridViewColumn Header="Date de fin"  DisplayMemberBinding="{Binding DateFin}" />
                                 <GridViewColumn Header="Employe"  DisplayMemberBinding="{Binding unEmploye}" />

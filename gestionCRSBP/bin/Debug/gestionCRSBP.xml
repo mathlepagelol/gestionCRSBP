@@ -1,0 +1,142 @@
+<?xml version="1.0"?>
+<Biblio xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <listeEmploye>
+    <Employe>
+      <NoEmploye>1</NoEmploye>
+      <Nom>Potvin</Nom>
+      <Prenom>Lise</Prenom>
+      <Adresse>10 rue Alain</Adresse>
+      <Telephone>418-666-7777</Telephone>
+      <CodePostal>G5R5Z2</CodePostal>
+    </Employe>
+    <Employe>
+      <NoEmploye>2</NoEmploye>
+      <Nom>Fraser</Nom>
+      <Prenom>Richard</Prenom>
+      <Adresse>5 rue Cacouna</Adresse>
+      <Telephone>418-111-2222</Telephone>
+      <CodePostal>G5R3W1</CodePostal>
+    </Employe>
+  </listeEmploye>
+  <listeMembre>
+    <Membre>
+      <NoMembre>1</NoMembre>
+      <Nom>Lepage</Nom>
+      <Prenom>Mathieu</Prenom>
+      <Adresse>112 rue Aline</Adresse>
+      <Telephone>418-551-2563</Telephone>
+      <CodePostal>G5R5Z1</CodePostal>
+    </Membre>
+    <Membre>
+      <NoMembre>2</NoMembre>
+      <Nom>Lapointe</Nom>
+      <Prenom>James</Prenom>
+      <Adresse>12 rue Alain</Adresse>
+      <Telephone>418-111-2222</Telephone>
+      <CodePostal>G5R5Z1</CodePostal>
+    </Membre>
+    <Membre>
+      <NoMembre>3</NoMembre>
+      <Nom>Emond </Nom>
+      <Prenom>Laurence</Prenom>
+      <Adresse>10 rue des pommiers</Adresse>
+      <Telephone>418-888-6666</Telephone>
+      <CodePostal>G5R6T4</CodePostal>
+    </Membre>
+  </listeMembre>
+  <listeLivre />
+  <listeLocation>
+    <Location>
+      <unMembre>
+        <NoMembre>3</NoMembre>
+        <Nom>Emond </Nom>
+        <Prenom>Laurence</Prenom>
+        <Adresse>10 rue des pommiers</Adresse>
+        <Telephone>418-888-6666</Telephone>
+        <CodePostal>G5R6T4</CodePostal>
+      </unMembre>
+      <unEmploye>
+        <NoEmploye>2</NoEmploye>
+        <Nom>Fraser</Nom>
+        <Prenom>Richard</Prenom>
+        <Adresse>5 rue Cacouna</Adresse>
+        <Telephone>418-111-2222</Telephone>
+        <CodePostal>G5R3W1</CodePostal>
+      </unEmploye>
+      <listeLivre />
+      <NoLocation>1</NoLocation>
+      <DateDebut>2021-04-17T00:00:00</DateDebut>
+      <DateFin>2021-04-07T00:00:00</DateFin>
+    </Location>
+    <Location>
+      <unMembre>
+        <NoMembre>2</NoMembre>
+        <Nom>Lapointe</Nom>
+        <Prenom>James</Prenom>
+        <Adresse>12 rue Alain</Adresse>
+        <Telephone>418-111-2222</Telephone>
+        <CodePostal>G5R5Z1</CodePostal>
+      </unMembre>
+      <unEmploye>
+        <NoEmploye>1</NoEmploye>
+        <Nom>Potvin</Nom>
+        <Prenom>Lise</Prenom>
+        <Adresse>10 rue Alain</Adresse>
+        <Telephone>418-666-7777</Telephone>
+        <CodePostal>G5R5Z2</CodePostal>
+      </unEmploye>
+      <listeLivre />
+      <NoLocation>2</NoLocation>
+      <DateDebut>2021-04-25T00:00:00</DateDebut>
+      <DateFin>2021-04-12T00:00:00</DateFin>
+    </Location>
+    <Location>
+      <unMembre>
+        <NoMembre>1</NoMembre>
+        <Nom>Lepage</Nom>
+        <Prenom>Mathieu</Prenom>
+        <Adresse>112 rue Aline</Adresse>
+        <Telephone>418-551-2563</Telephone>
+        <CodePostal>G5R5Z1</CodePostal>
+      </unMembre>
+      <unEmploye>
+        <NoEmploye>2</NoEmploye>
+        <Nom>Fraser</Nom>
+        <Prenom>Richard</Prenom>
+        <Adresse>5 rue Cacouna</Adresse>
+        <Telephone>418-111-2222</Telephone>
+        <CodePostal>G5R3W1</CodePostal>
+      </unEmploye>
+      <listeLivre />
+      <NoLocation>3</NoLocation>
+      <DateDebut>2021-04-20T00:00:00</DateDebut>
+      <DateFin>2021-04-25T00:00:00</DateFin>
+    </Location>
+    <Location>
+      <unMembre>
+        <NoMembre>3</NoMembre>
+        <Nom>Emond </Nom>
+        <Prenom>Laurence</Prenom>
+        <Adresse>10 rue des pommiers</Adresse>
+        <Telephone>418-888-6666</Telephone>
+        <CodePostal>G5R6T4</CodePostal>
+      </unMembre>
+      <unEmploye>
+        <NoEmploye>2</NoEmploye>
+        <Nom>Fraser</Nom>
+        <Prenom>Richard</Prenom>
+        <Adresse>5 rue Cacouna</Adresse>
+        <Telephone>418-111-2222</Telephone>
+        <CodePostal>G5R3W1</CodePostal>
+      </unEmploye>
+      <listeLivre />
+      <NoLocation>4</NoLocation>
+      <DateDebut>2021-04-13T00:00:00</DateDebut>
+      <DateFin>2021-04-18T00:00:00</DateFin>
+    </Location>
+  </listeLocation>
+  <Nom>CRSBP du Bas-St-Laurent</Nom>
+  <Adresse>465 rue St-Pierre</Adresse>
+  <Telephone>4188671682</Telephone>
+  <CodePostal>G5R4T6</CodePostal>
+</Biblio>

@@ -54,6 +54,9 @@ namespace gestionCRSBP.Models
         public List<Livre> listeLivre;
         public List<Location> listeLocation;
 
+        public Biblio()
+        { }
+
         public Biblio(string unNom, string uneAdresse, string unTelephone, string unCodePostal)
         {
             this.Nom = unNom;
