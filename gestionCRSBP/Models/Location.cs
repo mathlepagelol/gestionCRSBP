@@ -1,19 +1,41 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿/*
+ * Classe : Location
+ * 
+ * Version : 1.0
+ * 
+ * Auteur : Mathieu Lepage
+ * 
+ * Date : 02/04/2021
+ * 
+ * But :  Classe qui représente nos locations.  La classe contient ses infos (no de location, date de debut, date de fin), un membre, un employe et une liste  de livre.  
+ */
 
+using System;
+using System.Collections.Generic;
+
+/// <summary>
+/// Namespace pour les Modèles de l'application
+/// </summary>
 namespace gestionCRSBP.Models
 {
+    /// <summary>
+    /// Classe qui permet de représenter une location
+    /// </summary>
     public class Location
     {
+        /// <summary>
+        /// Chaîne de caractère représentant le no de location
+        /// </summary>
         private string noLocation;
+        /// <summary>
+        /// Propriété permettant d'accéder au no de location (GETTER/SETTER)
+        /// </summary>
         public string NoLocation
         {
             get { return (noLocation); }
             set { noLocation = value; }
         }
+
 
         private DateTime dateDebut;
         public DateTime DateDebut
@@ -21,6 +43,7 @@ namespace gestionCRSBP.Models
             get { return (dateDebut); }
             set { dateDebut = value; }
         }
+
 
         private DateTime dateFin;
         public DateTime DateFin

@@ -103,7 +103,7 @@
                             <GridView>
                                 <GridViewColumn Header="#"  DisplayMemberBinding="{Binding NoSerie}" />
                                 <GridViewColumn Header="Titre"  DisplayMemberBinding="{Binding Titre}" />
-                                <GridViewColumn Header="Quantite"  DisplayMemberBinding="{Binding Qte}" />
+                                <GridViewColumn Header="Qte"  DisplayMemberBinding="{Binding Qte}" />
                                 <GridViewColumn Header="Date d'apparition" DisplayMemberBinding="{Binding DatePublication, StringFormat=d}" />
                                 <GridViewColumn Header="Auteur(e)"  DisplayMemberBinding="{Binding Auteur}" />
                             </GridView>
@@ -153,13 +153,13 @@
                     <DatePicker Name="dpDateFinLocation" HorizontalAlignment="Left" Margin="30,174,0,0" VerticalAlignment="Top" Style="{StaticResource dpStyle}"/>
                     <ComboBox Name="cbxMembreLocation"  HorizontalAlignment="Left" Margin="30,234,0,0" VerticalAlignment="Top" Width="120"  />
                     <ComboBox Name="cbxEmployeLocation" HorizontalAlignment="Left" Margin="30,292,0,0" VerticalAlignment="Top" Width="120" />
-                    <Button Name="btnInitialiserLocation" Content="Initialiser" HorizontalAlignment="Left" Margin="29,346,0,0" VerticalAlignment="Top" Width="75" Click="btnInitialiserLocation_Click" BorderBrush="#FF17E017"/>
-                    <Button Name="btnModifierLocation" Content="Modifier" HorizontalAlignment="Left" Margin="30,371,0,0" VerticalAlignment="Top" Width="75" Click="btnModifierLocation_Click" BorderBrush="#FF1D8AD4"/>
+                    <Button Name="btnInitialiserLocation" Content="Initialiser" HorizontalAlignment="Left" Margin="29,343,0,0" VerticalAlignment="Top" Width="75" Click="btnInitialiserLocation_Click" BorderBrush="#FF17E017"/>
+                    <Button Name="btnModifierLocation" Content="Modifier" HorizontalAlignment="Left" Margin="30,368,0,0" VerticalAlignment="Top" Width="75" Click="btnModifierLocation_Click" BorderBrush="#FF1D8AD4"/>
                     <ListView  Name="lvLivreDispo"  Style="{StaticResource lvStyle}" Margin="644,242,43,145">
                         <ListView.View>
                             <GridView>
                                 <GridViewColumn Header="Titre"  DisplayMemberBinding="{Binding Titre}" />
-                                <GridViewColumn Header="Quantite"  DisplayMemberBinding="{Binding Qte}"/>
+                                <GridViewColumn Header="Qte"  DisplayMemberBinding="{Binding Qte}"/>
                             </GridView>
                         </ListView.View>
                     </ListView>
@@ -169,7 +169,7 @@
                         <ListView.View>
                             <GridView>
                                 <GridViewColumn Header="Titre"  DisplayMemberBinding="{Binding Titre}" />
-                                <GridViewColumn Header="Quantite"  DisplayMemberBinding="{Binding Qte}"/>
+                                <GridViewColumn Header="Qte"  DisplayMemberBinding="{Binding Qte}"/>
                             </GridView>
                         </ListView.View>
                     </ListView>

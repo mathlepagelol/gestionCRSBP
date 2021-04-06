@@ -193,6 +193,28 @@
         <CodePostal>G5R5Z2</CodePostal>
       </unEmploye>
     </Location>
+    <Location>
+      <listeLivre />
+      <NoLocation>6</NoLocation>
+      <DateDebut>2021-04-13T00:00:00</DateDebut>
+      <DateFin>2021-04-30T00:00:00</DateFin>
+      <unMembre>
+        <NoMembre>1</NoMembre>
+        <Nom>Lepage</Nom>
+        <Prenom>Mathieu</Prenom>
+        <Adresse>112 rue Aline</Adresse>
+        <Telephone>418-551-2563</Telephone>
+        <CodePostal>G5R5Z1</CodePostal>
+      </unMembre>
+      <unEmploye>
+        <NoEmploye>1</NoEmploye>
+        <Nom>Potvin</Nom>
+        <Prenom>Lise</Prenom>
+        <Adresse>10 rue Alain</Adresse>
+        <Telephone>418-666-7777</Telephone>
+        <CodePostal>G5R5Z2</CodePostal>
+      </unEmploye>
+    </Location>
   </listeLocation>
   <Nom>CRSBP du Bas-St-Laurent</Nom>
   <Adresse>465 rue St-Pierre</Adresse>
