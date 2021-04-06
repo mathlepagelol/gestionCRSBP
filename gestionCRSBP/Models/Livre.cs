@@ -49,7 +49,7 @@ namespace gestionCRSBP.Models
         }
 
         /// <summary>
-        /// Chaîne de caractère représentant la quantite
+        /// Integer représentant la quantite
         /// </summary>
         private int qte;
         /// <summary>
@@ -62,7 +62,7 @@ namespace gestionCRSBP.Models
         }
 
         /// <summary>
-        /// Chaîne de caractère représentant la date de publication
+        /// DateTime représentant la date de publication
         /// </summary>
         private DateTime datePublication;
         /// <summary>

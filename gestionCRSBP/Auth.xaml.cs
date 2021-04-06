@@ -1,18 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿/*
+ * Classe : Auth.xaml.cs
+ * 
+ * Version : 1.0
+ * 
+ * Auteur : Mathieu Lepage
+ * 
+ * Date : 02/04/2021
+ * 
+ * But :  Classe qui représente toute la logique applicative (code-behind) de la page d'authentification  
+ */
+
+using System;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
+/// <summary>
+/// Namespace pour les files de code-behind
+/// </summary>
 namespace gestionCRSBP
 {
     /// <summary>
@@ -25,6 +29,11 @@ namespace gestionCRSBP
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Bouton qui permet de connecter l'utilisateur => redirection à la HomePage de l'application
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnConnexion_Click(object sender, RoutedEventArgs e)
         {
             try

@@ -36,42 +36,77 @@ namespace gestionCRSBP.Models
             set { noLocation = value; }
         }
 
-
+        /// <summary>
+        /// DateTime représentant la date de debut
+        /// </summary>
         private DateTime dateDebut;
+        /// <summary>
+        /// Propriété permettant d'accéder la date de debut (GETTER/SETTER)
+        /// </summary>
         public DateTime DateDebut
         {
             get { return (dateDebut); }
             set { dateDebut = value; }
         }
 
-
+        /// <summary>
+        /// DateTime représentant la date de fin
+        /// </summary>
         private DateTime dateFin;
+        /// <summary>
+        /// Propriété permettant d'accéder la date de fin (GETTER/SETTER)
+        /// </summary>
         public DateTime DateFin
         {
             get { return (dateFin); }
             set { dateFin = value; }
         }
 
+        /// <summary>
+        /// Objet qui représente notre membre
+        /// </summary>
         public Membre unMembre { get; set; }
+        /// <summary>
+        /// Objet qui représente notre employe
+        /// </summary>
         public Employe unEmploye { get; set; }
 
+        /// <summary>
+        /// List<Livre> représentant la liste des livres de la location
+        /// </summary>
         public List<Livre> listeLivre = new List<Livre>();
 
+        /// <summary>
+        /// Permet de retourner le membre de la location
+        /// </summary>
+        /// <returns>Membre this.membre</returns>
         public Membre ObtenirMembre()
         {
             return unMembre;
         }
 
+        /// <summary>
+        /// Permet de retourner l'employe de la location
+        /// </summary>
+        /// <returns>Employe this.employe</returns>
         public Employe ObtenirEmploye()
         {
             return unEmploye;
         }
 
+        /// <summary>
+        /// Permet de retourner la liste de livre d'une location
+        /// </summary>
+        /// <returns>Livre[] listeLivre</returns>
         public Livre[] ObtenirListeLivre()
         {
             return listeLivre.ToArray();
         }
 
+        /// <summary>
+        /// Permet d'ajouter un livre à la liste d'une location
+        /// </summary>
+        /// <param name="unLivre"></param>
         public void AjouterLivre(Livre unLivre)
         {
             //if (SiLivrePresent(unLivre))
@@ -79,6 +114,11 @@ namespace gestionCRSBP.Models
             listeLivre.Add(unLivre);
         }
 
+        /// <summary>
+        /// Permet d'obtenir un livre spécifique dans la liste de livre d'une location
+        /// </summary>
+        /// <param name="unLivre"></param>
+        /// <returns>Livre unLivre</returns>
         public Livre ObtenirLivre(Livre unLivre)
         {
             foreach (Livre livre in listeLivre)
@@ -89,6 +129,10 @@ namespace gestionCRSBP.Models
             return null;
         }
 
+        /// <summary>
+        /// Permet de supprimer un livre d'une liste de location
+        /// </summary>
+        /// <param name="unLivre"></param>
         public void EnleverLivre(Livre unLivre)
         {
             //if (!SiLivrePresent(unLivre))
@@ -106,10 +150,18 @@ namespace gestionCRSBP.Models
         //    return false;
         //}
 
+        /// <summary>
+        /// Redéfinition de la méthode GetHashCode()
+        /// </summary>
+        /// <returns>le code hash</returns>
         public override int GetHashCode()
         {
             return NoLocation.GetHashCode();
         }
+        /// <summary>
+        /// Redéfinition de la méthode Equals()
+        /// </summary>
+        /// <returns>true si unique, sinon false</returns>
         public override bool Equals(object obj)
         {
             return ((obj != null) && (obj is Location) && (NoLocation.Equals((obj as Location).NoLocation)));

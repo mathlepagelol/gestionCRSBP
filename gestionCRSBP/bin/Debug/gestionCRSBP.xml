@@ -81,6 +81,13 @@
       <DatePublication>2021-04-11T00:00:00</DatePublication>
       <Auteur>James Clear</Auteur>
     </Livre>
+    <Livre>
+      <NoSerie>5</NoSerie>
+      <Titre>12 Rules to Life</Titre>
+      <Qte>5</Qte>
+      <DatePublication>2021-04-18T00:00:00</DatePublication>
+      <Auteur>Jordan Peterson</Auteur>
+    </Livre>
   </listeLivre>
   <listeLocation>
     <Location>

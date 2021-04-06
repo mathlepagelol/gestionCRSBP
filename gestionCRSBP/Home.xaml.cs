@@ -1,21 +1,26 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿/*
+ * Classe : Home.xaml.cs
+ * 
+ * Version : 1.0
+ * 
+ * Auteur : Mathieu Lepage
+ * 
+ * Date : 02/04/2021
+ * 
+ * But :  Classe qui représente toute la logique applicative (code-behind) de la page principale.
+ */
+
+using System;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using gestionCRSBP.Models;
 using System.IO;
 using System.Xml.Serialization;
 
+/// <summary>
+/// Namespace pour les files de code-behind
+/// </summary>
 namespace gestionCRSBP
 {
     /// <summary>
@@ -23,6 +28,9 @@ namespace gestionCRSBP
     /// </summary>
     public partial class Home : Page
     {
+        /// <summary>
+        /// On instancie notre bibliothèque qui contiendra tous les listes
+        /// </summary>
         Biblio crsbp = new Biblio("CRSBP du Bas-St-Laurent", "465 rue St-Pierre", "4188671682", "G5R4T6");
         
         public Home()
@@ -43,24 +51,33 @@ namespace gestionCRSBP
             peuplerLesListes();
         }
 
-        public void viderChamps()
-        {
-            edtNoMembre.Text = edtNomMembre.Text = edtPrenomMembre.Text = edtAdresseMembre.Text = edtCodePostalMembre.Text = edtTelephoneMembre.Text = "";
-            edtNoEmploye.Text = edtNomEmploye.Text = edtPrenomEmploye.Text = edtAdresseEmploye.Text = edtCodePostalEmploye.Text = edtTelephoneEmploye.Text = "";
-            edtNoLivre.Text = edtTitreLivre.Text = edtQuantiteLivre.Text = dpDateLivre.Text = edtAuteurLivre.Text = "";
-            edtNoLocation.Text = dpDateDebutLocation.Text = dpDateFinLocation.Text = dpDateLivre.Text = cbxMembreLocation.Text = cbxEmployeLocation.Text = "";
-        }
+        /* -------------- Fonctions du menu & fonctions complémentaires ------------------------- */
 
+        /// <summary>
+        /// Option du menu qui permet de fermer l'application
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MenuQuitter_Click(object sender, RoutedEventArgs e)
         {
             App.Current.Shutdown();
         }
 
+        /// <summary>
+        /// Option du menu qui permet d'obtenir des renseignements sur l'application
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MenuAboutUs_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("Application de gestion des locations pour le Réseau BIBLIO du Bas-Saint-Laurent \n\n Auteur : Mathieu Lepage \n Version : 1.0");
         }
 
+        /// <summary>
+        /// Option du menu qui permet de sauvegarde l'information des listes dans un fichier XML
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MenuSauvegarder_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -85,6 +102,9 @@ namespace gestionCRSBP
             }
         }
 
+        /// <summary>
+        /// Fonction qui permet de repeupler nos listes/champs texte
+        /// </summary>
         public void peuplerLesListes()
         {
             lvMembre.ItemsSource = null;
@@ -103,7 +123,28 @@ namespace gestionCRSBP
             { cbxEmployeLocation.Items.Add(employe);}
         }
 
+        /// <summary>
+        /// Fonction qui permet de vider les champs TextBox & ComboBox
+        /// </summary>
+        public void viderChamps()
+        {
+            //Input fields membre
+            edtNoMembre.Text = edtNomMembre.Text = edtPrenomMembre.Text = edtAdresseMembre.Text = edtCodePostalMembre.Text = edtTelephoneMembre.Text = "";
+            //Input fields employe
+            edtNoEmploye.Text = edtNomEmploye.Text = edtPrenomEmploye.Text = edtAdresseEmploye.Text = edtCodePostalEmploye.Text = edtTelephoneEmploye.Text = "";
+            //Input fields livre
+            edtNoLivre.Text = edtTitreLivre.Text = edtQuantiteLivre.Text = dpDateLivre.Text = edtAuteurLivre.Text = "";
+            //Input fields location
+            edtNoLocation.Text = dpDateDebutLocation.Text = dpDateFinLocation.Text = dpDateLivre.Text = cbxMembreLocation.Text = cbxEmployeLocation.Text = "";
+        }
+
         /* -------------- Fonctions de gestion des membres ------------------------- */
+       
+       /// <summary>
+       /// Bouton qui permet d'inscrire un membre dans la liste de la bibliothèque
+       /// </summary>
+       /// <param name="sender"></param>
+       /// <param name="e"></param>
         private void btnAjouterMembre_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -118,6 +159,11 @@ namespace gestionCRSBP
             }
         }
 
+        /// <summary>
+        /// Bouton qui permet de modifier un membre de la bibliothèque
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnModifierMembre_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -140,6 +186,11 @@ namespace gestionCRSBP
             }
         }
 
+        /// <summary>
+        /// Bouton qui permet de supprimer un membre de la liste de la bibliothèque
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnSupprimerMembre_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -157,6 +208,11 @@ namespace gestionCRSBP
             }
         }
 
+        /// <summary>
+        /// Fonction qui permet d'afficher les informations du membre sélectionné dans les champs respectifs
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ShowSelected_Membre(object sender, MouseButtonEventArgs e)
         {
             try
@@ -177,6 +233,12 @@ namespace gestionCRSBP
         }
 
         /* -------------- Fonctions de gestion des employes ------------------------- */
+
+        /// <summary>
+        /// Bouton qui permet d'inscrire un employe dans la liste de la bibliothèque
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAjouterEmploye_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -192,6 +254,11 @@ namespace gestionCRSBP
             }
         }
 
+        /// <summary>
+        /// Bouton qui permet de modifier un employe de la bibliothèque
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnModifierEmploye_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -213,6 +280,11 @@ namespace gestionCRSBP
             }
         }
 
+        /// <summary>
+        /// Bouton qui permet de supprimer un employe de la liste de la bibliothèque
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnSupprimerEmploye_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -231,6 +303,11 @@ namespace gestionCRSBP
             
         }
 
+        /// <summary>
+        /// Fonction qui permet d'afficher les informations d'un employe sélectionné dans les champs respectifs
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ShowSelected_Employe(object sender, MouseButtonEventArgs e)
         {
             try
@@ -252,6 +329,11 @@ namespace gestionCRSBP
 
         /* -------------- Fonctions de gestion des livres ------------------------- */
 
+        /// <summary>
+        /// Bouton qui permet d'inscrire un livre dans la liste de la bibliothèque
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAjouterLivre_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -266,6 +348,11 @@ namespace gestionCRSBP
             }
         }
 
+        /// <summary>
+        /// Bouton qui permet de modifier un livre de la bibliothèque
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnModifierLivre_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -286,6 +373,11 @@ namespace gestionCRSBP
             }
         }
 
+        /// <summary>
+        /// Bouton qui permet de supprimer un livre de la liste de la bibliothèque
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnSupprimerLivre_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -303,6 +395,11 @@ namespace gestionCRSBP
             }
         }
 
+        /// <summary>
+        /// Fonction qui permet d'afficher les informations d'un livre sélectionné dans les champs respectifs
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ShowSelected_Livre(object sender, MouseButtonEventArgs e)
         {
             try
@@ -323,6 +420,11 @@ namespace gestionCRSBP
 
         /* -------------- Fonctions de gestion des locations ------------------------- */
 
+        /// <summary>
+        /// Bouton qui permet d'initialiser une location dans le système de la bibliothèque
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnInitialiserLocation_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -343,6 +445,11 @@ namespace gestionCRSBP
             }
         }
 
+        /// <summary>
+        /// Bouton qui permet de modifier une location dans le système de la bibliothèque
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnModifierLocation_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -372,6 +479,11 @@ namespace gestionCRSBP
             }
         }
 
+        /// <summary>
+        /// Bouton qui permet d'inscrire un livre à la location d'un membre
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAjouterLivreLocation_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -400,6 +512,11 @@ namespace gestionCRSBP
             }
         }
 
+        /// <summary>
+        /// Bouton qui permet de retirer un livre à la location d'un membre
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnRetirerLivreLocation_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -430,6 +547,11 @@ namespace gestionCRSBP
             }
         }
 
+        /// <summary>
+        /// Fonction qui permet d'afficher les informations d'une location sélectionnée dans les champs respectifs
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ShowSelected_Location(object sender, MouseButtonEventArgs e)
         {
             try

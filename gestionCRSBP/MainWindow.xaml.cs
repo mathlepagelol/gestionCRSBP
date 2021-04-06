@@ -1,18 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
+﻿/*
+ * Classe : MainWindow.xaml.cs
+ * 
+ * Version : 1.0
+ * 
+ * Auteur : Mathieu Lepage
+ * 
+ * Date : 02/04/2021
+ * 
+ * But :  Classe qui représente toute la logique applicative (code-behind) de la 'Main Window' de l'application. Pour cette application, elle sert simplement de
+ *        NavigationWindow parent pour nos pages enfants (Auth/Home).
+ */
 using System.Windows.Navigation;
-using System.Windows.Shapes;
 
+/// <summary>
+/// Namespace pour les files de code-behind
+/// </summary>
 namespace gestionCRSBP
 {
     /// <summary>
